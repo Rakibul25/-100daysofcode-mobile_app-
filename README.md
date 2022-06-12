@@ -5,3 +5,11 @@ Mobile application development is not new for me. I worked on both native and fl
 
 ## Outline
 ### Android Native
+- (Fundamentals)
+- Android components, Life Cycle
+- Activity
+- View & View Group
+
+### Day 01
+Firstly I’m focusing on android fundamentals. Like android components, life cycle, activity, fragment, view, and view group.
+Moving on XML layouts and view.
