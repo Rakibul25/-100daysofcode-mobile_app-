@@ -8,6 +8,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 
 public class MainActivity extends Activity
 {
@@ -19,9 +20,9 @@ public class MainActivity extends Activity
             "Calender"
     };
     int images[] = {
+            R.drawable.ic_baseline_android_24,
             R.drawable.ic_baseline_settings_24,
             R.drawable.ic_baseline_home_24,
-            R.drawable.ic_baseline_android_24,
     };
 
 
