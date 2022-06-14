@@ -9,6 +9,10 @@ Mobile application development is not new for me. I worked on both native and fl
 - Android components, Life Cycle
 - Activity
 - View & View Group
+- Default & Custom adapter.
 
 ### Day 01
 Firstly I’m focusing on android fundamentals. Like android components, life cycle, activity, fragment, view, and view group. I covered views like edit text, text view, and buttons. Also covered different kinds of layouts.
+### Day 02
+Today I’m covering listview, gridview and recycler view. How to take data from an array and show those in a listview or gridview through an array adapter. 
+Moving on to custom adapter. Taking data from the array and making gridview with custom adapter.
