@@ -11,6 +11,7 @@ Mobile application development is not new for me. I worked on both native and fl
 - View & View Group
 - Default & Custom adapter.
 - Sqlite
+- Firebase
 
 ### Day 01
 Firstly I’m focusing on android fundamentals. Like android components, life cycle, activity, fragment, view, and view group. I covered views like edit text, text view, and buttons. Also covered different kinds of layouts.
@@ -19,3 +20,5 @@ Today I’m covering listview, gridview and recycler view. How to take data from
 Moving on to custom adapter. Taking data from the array and making gridview with custom adapter.
 ### Day 03
 Today I’m learning SQLite. Creating SQLite database, how to insert, update, delete and show data from a database.
+### Day 04
+Todays topic is firebase. Creating realtime database in firebase and CRUD operation.
