@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "817923119930",
+    "project_id": "daysofcode-2fab1",
+    "storage_bucket": "daysofcode-2fab1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817923119930:android:4fe3f27b1cdc98f273ce03",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817923119930-70t1alrckc0htgb245oel258vmuj2rq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgcEONZXjcqPxIE0qac9aptYY0OlyqVIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817923119930-70t1alrckc0htgb245oel258vmuj2rq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
