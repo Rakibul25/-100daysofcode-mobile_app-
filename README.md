@@ -21,4 +21,4 @@ Moving on to custom adapter. Taking data from the array and making gridview with
 ### Day 03
 Today I’m learning SQLite. Creating SQLite database, how to insert, update, delete and show data from a database.
 ### Day 04
-Todays topic is firebase. Creating realtime database in firebase and CRUD operation.
+Todays topic is firebase. Creating realtime database in firebase and connect with app.
