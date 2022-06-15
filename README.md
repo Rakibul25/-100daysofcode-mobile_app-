@@ -13,6 +13,7 @@ Mobile application development is not new for me. I worked on both native and fl
 - Sqlite
 - Firebase
 
+## Progress
 ### Day 01
 Firstly I’m focusing on android fundamentals. Like android components, life cycle, activity, fragment, view, and view group. I covered views like edit text, text view, and buttons. Also covered different kinds of layouts.
 ### Day 02
