@@ -23,5 +23,5 @@ Moving on to custom adapter. Taking data from the array and making gridview with
 Today I’m learning SQLite. Creating SQLite database, how to insert, update, delete and show data from a database.
 ### Day 04
 Todays topic is firebase. Creating realtime database in firebase and connect with app.
-### I started the 100daysofcode challenge. However,  I took a break to update my workstation. It will be continued from tomorrow InshaAllah.
+#### I started the 100daysofcode challenge. However,  I took a break to update my workstation. It will be continued from tomorrow InshaAllah.
 https://twitter.com/Rakibul14092789/status/1541118945759219712?s=20&t=EQrZ-AToRid6qou2gRopMw
