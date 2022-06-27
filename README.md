@@ -25,3 +25,6 @@ Today I’m learning SQLite. Creating SQLite database, how to insert, update, de
 Todays topic is firebase. Creating realtime database in firebase and connect with app.
 #### I started the 100daysofcode challenge. However,  I took a break to update my workstation. It will be continued from tomorrow InshaAllah.
 https://twitter.com/Rakibul14092789/status/1541118945759219712?s=20&t=EQrZ-AToRid6qou2gRopMw
+### Day 05
+Planning an app where users can authenticate with email or can create an account using firebase. There will be CRUD feature as well.
+Today's topic is authentication.
