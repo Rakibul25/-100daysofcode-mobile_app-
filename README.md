@@ -28,3 +28,5 @@ https://twitter.com/Rakibul14092789/status/1541118945759219712?s=20&t=EQrZ-AToRi
 ### Day 05
 Planning an app where users can authenticate with email or can create an account using firebase. There will be CRUD feature as well.
 Today's topic is authentication.
+### Day 06
+Preparing the environment for firebase app. Preparing manifest, color setting ,theme, text, button style.
