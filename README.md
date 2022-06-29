@@ -30,3 +30,6 @@ Planning an app where users can authenticate with email or can create an account
 Today's topic is authentication.
 ### Day 06
 Preparing the environment for firebase app. Preparing manifest, color setting ,theme, text, button style.
+reffering geeksforgeeks - https://www.geeksforgeeks.org/user-authentication-and-crud-operation-with-firebase-realtime-database-in-android/
+### Day 07
+Designing the register interface for authentication
