@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/100daysofcode/-100daysofcode-mobile_app-/firebase/app/src/main/res/drawable/button_back.xml" value="0.2225" />
+        <entry key="..\:/100daysofcode/-100daysofcode-mobile_app-/firebase/app/src/main/res/drawable/progress_back.xml" value="0.208" />
+        <entry key="..\:/100daysofcode/-100daysofcode-mobile_app-/firebase/app/src/main/res/drawable/rounded_drawable.xml" value="0.2225" />
         <entry key="..\:/100daysofcode/-100daysofcode-mobile_app-/firebase/app/src/main/res/layout/activity_main.xml" value="0.34375" />
+        <entry key="..\:/100daysofcode/-100daysofcode-mobile_app-/firebase/app/src/main/res/layout/activity_register.xml" value="0.34375" />
       </map>
     </option>
   </component>
