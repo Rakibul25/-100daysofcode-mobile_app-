@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "837366032194",
+    "project_id": "daysofcode-579db",
+    "storage_bucket": "daysofcode-579db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837366032194:android:c3c0f883484d6ae4660adb",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837366032194-3lh1t9jiij5kmol6c9btpbr7la6aj687.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPo7DN-oo-t7QGAXlw0ifhIvBZYOQG5LU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837366032194-3lh1t9jiij5kmol6c9btpbr7la6aj687.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
