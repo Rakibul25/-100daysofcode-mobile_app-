@@ -36,3 +36,5 @@ Designing the register interface for authentication
 Having some issues in the git branch, so I had to merge it with the previous branch. I learned how to create a separate branch with a previous commit. Also  “R” resource issues are solved.
 ### Day 09
 Finally the registration page, login page, landing page are ready. Ready to implement auth.
+### Day 10
+Everything done with auth. Signup and login perfectly working with firebase.
