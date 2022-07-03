@@ -38,3 +38,5 @@ Having some issues in the git branch, so I had to merge it with the previous bra
 Finally the registration page, login page, landing page are ready. Ready to implement auth.
 ### Day 10
 Everything done with auth. Signup and login perfectly working with firebase.
+### Day 11
+After finishing auth, moving on to CRUD.
