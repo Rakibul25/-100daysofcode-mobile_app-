@@ -40,3 +40,5 @@ Finally the registration page, login page, landing page are ready. Ready to impl
 Everything done with auth. Signup and login perfectly working with firebase.
 ### Day 11
 After finishing auth, moving on to CRUD.
+### Day 12
+Learning the basic of CRUD, and how it works with firebase. 
