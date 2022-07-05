@@ -42,3 +42,4 @@ Everything done with auth. Signup and login perfectly working with firebase.
 After finishing auth, moving on to CRUD.
 ### Day 12
 Learning the basic of CRUD, and how it works with firebase. 
+#### Visiting family and taking a vacation for Eid. I'll get started on it as soon as I can.
