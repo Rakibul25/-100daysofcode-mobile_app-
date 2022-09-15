@@ -45,3 +45,5 @@ Learning the basic of CRUD, and how it works with firebase.
 #### Visiting family and taking a vacation for Eid. I'll get started on it as soon as I can.
 ### Day 13
 Designed insert page. How to move from one page to another with intent.
+### Day 14
+Designing logic for insertion.
