@@ -47,3 +47,5 @@ Learning the basic of CRUD, and how it works with firebase.
 Designed insert page. How to move from one page to another with intent.
 ### Day 14
 Designing logic for insertion.
+### Day 15
+Model designing.
