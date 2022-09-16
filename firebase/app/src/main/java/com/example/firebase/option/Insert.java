@@ -23,8 +23,7 @@ public class Insert extends AppCompatActivity {
 
         insertbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), Insert.class);
-                startActivity(myIntent);
+
             }
 
         });
