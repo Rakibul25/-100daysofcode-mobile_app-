@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context=".option.Insert">
+    tools:context=".option.Update">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insert Data"
+        android:text="Update Data"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="#986558"
