@@ -28,7 +28,7 @@ public class Insert extends AppCompatActivity {
                 User user = new User(name.getText().toString(),id.getText().toString());
                 dobject.add(user).addOnSuccessListener(suc ->{
                     Toast.makeText(Insert.this, "added", Toast.LENGTH_SHORT).show();
-                }).addOnCompleteListener(er ->
+                }).addOnFailureListener(er ->
                 {
                     Toast.makeText(Insert.this, "failed", Toast.LENGTH_SHORT).show();
                 });

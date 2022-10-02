@@ -20,19 +20,19 @@
 
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/namen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
         ></EditText>
     <EditText
-        android:id="@+id/id"
+        android:id="@+id/idn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="ID"
         ></EditText>
     <Button
-        android:id="@+id/btnInsert"
+        android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit"
