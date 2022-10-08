@@ -18,5 +18,8 @@ public class Dobject {
     public Task<Void> update(String key, HashMap<String, Object> hashMap){
         return databaseReference.child(key).updateChildren(hashMap);
     }
+    public Task<Void> remove(String key){
+        return databaseReference.child(key).removeValue();
+    }
 
 }

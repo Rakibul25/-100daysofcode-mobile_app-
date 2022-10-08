@@ -31,7 +31,7 @@ public class Update extends AppCompatActivity {
         updatebutton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                dobject.update("-NDI4aKlhas3lDeoXDP5",hashMap).addOnSuccessListener(suc ->
+                dobject.update("/User/-NDI4aKlhas3lDeoXDP5",hashMap).addOnSuccessListener(suc ->
                 {
                     Toast.makeText(Update.this, "Update done", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(err ->
