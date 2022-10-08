@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.firebase.option.Delete;
 import com.example.firebase.option.Insert;
 import com.example.firebase.option.Update;
 
@@ -22,6 +23,7 @@ public class Choose extends AppCompatActivity {
         setContentView(R.layout.activity_choose);
         btnInsert = findViewById(R.id.btnInsert);
         btnUpdate = findViewById(R.id.btnUpdate);
+        btnDelete = findViewById(R.id.btnDelete);
 
         btnInsert.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -36,6 +38,13 @@ public class Choose extends AppCompatActivity {
                 startActivity(myIntent);
             }
 
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), Delete.class);
+                startActivity(myIntent);
+            }
         });
     }
 }

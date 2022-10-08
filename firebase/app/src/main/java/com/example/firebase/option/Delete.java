@@ -20,6 +20,19 @@ public class Delete extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete);
         dltbutton = findViewById(R.id.btnDelete);
+        Dobject dobject = new Dobject();
+        dltbutton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                dobject.remove("-NDI4aKlhas3lDeoXDP5").addOnSuccessListener(suc ->
+                {
+                    Toast.makeText(Delete.this, "Delete done", Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(err ->
+                {
+                    Toast.makeText(Delete.this, "failed", Toast.LENGTH_SHORT).show();
+                });
+            }
+        });
 
     }
 }
