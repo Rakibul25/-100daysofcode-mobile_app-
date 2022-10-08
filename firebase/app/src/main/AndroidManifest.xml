@@ -21,6 +21,9 @@
             android:name=".option.Update"
             android:exported="false" />
         <activity
+            android:name=".option.Delete"
+            android:exported="false" />
+        <activity
             android:name=".Choose"
             android:exported="false" />
         <activity
