@@ -49,3 +49,17 @@ Designed insert page. How to move from one page to another with intent.
 Designing logic for insertion.
 ### Day 15
 Model designing.
+### Day 16
+Insertion done
+### Day 17
+Update design
+### Day 18
+Update done
+### Day 19
+Delete data done
+### Day 20
+Designing model and adapter for listview
+### Day 21
+Fetching data from firebase
+### Day 22
+Display data done.
