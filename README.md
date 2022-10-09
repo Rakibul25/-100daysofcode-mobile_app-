@@ -63,3 +63,5 @@ Designing model and adapter for listview
 Fetching data from firebase
 ### Day 22
 Display data done.
+### Day 23
+Today I'm covering regex for registration section. Only user with same email pattern can register.
