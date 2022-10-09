@@ -54,10 +54,11 @@ public class RegisterActivity extends AppCompatActivity {
     private void createUser() {
         String email = etRegEmail.getText().toString();
         String password = etRegPassword.getText().toString();
+        Boolean flag = false;
 
         //ReGex part
         String regex1 = "@uiu.ac.bd";
-        String regex2 = "^@bscse.uiu.ac.bd";
+        String regex2 = "@bscse.uiu.ac.bd";
 
         Pattern pattern1 = Pattern.compile(regex1);
         Pattern pattern2 = Pattern.compile(regex2);
@@ -77,22 +78,23 @@ public class RegisterActivity extends AppCompatActivity {
             for (Pattern pattern : patterns) {
                 Matcher matcher = pattern.matcher(email);
                 if (matcher.find()) {
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                            } else {
-                                Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                } else {
-                    Toast.makeText(this, "This email is not from this institution", Toast.LENGTH_SHORT).show();
+                    flag = true;
                 }
-
-
+            }
+            if (flag==true){
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                        } else {
+                            Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }else {
+                Toast.makeText(this, "Sorry!This email is not from this Institute.", Toast.LENGTH_SHORT).show();
             }
         }
 
