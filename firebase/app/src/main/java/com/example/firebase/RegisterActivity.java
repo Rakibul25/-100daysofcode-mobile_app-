@@ -1,5 +1,10 @@
 package com.example.firebase;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,38 +42,59 @@ public class RegisterActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        btnRegister.setOnClickListener(view ->{
+        btnRegister.setOnClickListener(view -> {
             createUser();
         });
 
-        tvLoginHere.setOnClickListener(view ->{
+        tvLoginHere.setOnClickListener(view -> {
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         });
     }
 
-    private void createUser(){
+    private void createUser() {
         String email = etRegEmail.getText().toString();
         String password = etRegPassword.getText().toString();
 
-        if (TextUtils.isEmpty(email)){
+        //ReGex part
+        String regex1 = "@uiu.ac.bd";
+        String regex2 = "^@bscse.uiu.ac.bd";
+
+        Pattern pattern1 = Pattern.compile(regex1);
+        Pattern pattern2 = Pattern.compile(regex2);
+        //Creating list of pattern
+        List<Pattern> patterns = new ArrayList<>();
+        patterns.add(pattern1);
+        patterns.add(pattern2);
+
+        if (TextUtils.isEmpty(email)) {
             etRegEmail.setError("Email cannot be empty");
             etRegEmail.requestFocus();
-        }else if (TextUtils.isEmpty(password)){
+        } else if (TextUtils.isEmpty(password)) {
             etRegPassword.setError("Password cannot be empty");
             etRegPassword.requestFocus();
-        }else{
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                    }else{
-                        Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
-    }
+        } else {
 
+            for (Pattern pattern : patterns) {
+                Matcher matcher = pattern.matcher(email);
+                if (matcher.find()) {
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                            } else {
+                                Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(this, "This email is not from this institution", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        }
+
+    }
 }
