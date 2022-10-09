@@ -1,5 +1,10 @@
 package com.example.firebase;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,6 +53,25 @@ public class LoginActivity extends AppCompatActivity {
     private void loginUser(){
         String email = etLoginEmail.getText().toString();
         String password = etLoginPassword.getText().toString();
+        //ReGex part
+        String regex1 = "\\d{10}";
+        String regex2 = "^[aeiou]";
+
+        Pattern pattern1 = Pattern.compile(regex1);
+        Pattern pattern2 = Pattern.compile(regex2);
+        //Creating list of pattern
+        List<Pattern> patterns = new ArrayList<>();
+        patterns.add(pattern1);
+        patterns.add(pattern2);
+
+        for (Pattern pattern: patterns) {
+            Matcher matcher = pattern.matcher(email);
+            if(matcher.find()) {
+                System.out.println("For regex "+pattern.pattern()+" "+input+" is valid");
+            } else {
+                System.out.println("For regex "+pattern.pattern()+" "+input+" is not valid");
+            }
+        }
 
         if (TextUtils.isEmpty(email)){
             etLoginEmail.setError("Email cannot be empty");
@@ -56,6 +80,13 @@ public class LoginActivity extends AppCompatActivity {
             etLoginPassword.setError("Password cannot be empty");
             etLoginPassword.requestFocus();
         }else{
+
+
+
+
+
+
+
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
