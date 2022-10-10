@@ -67,3 +67,6 @@ Display data done.
 Today I'm covering regex for registration section. Only user with same email pattern can register.
 
 #### Flutter
+
+### Day 24
+A quick review of dart.
