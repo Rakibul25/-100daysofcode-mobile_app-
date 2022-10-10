@@ -65,3 +65,5 @@ Fetching data from firebase
 Display data done.
 ### Day 23
 Today I'm covering regex for registration section. Only user with same email pattern can register.
+
+#### Flutter
