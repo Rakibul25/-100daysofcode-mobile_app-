@@ -70,3 +70,5 @@ Today I'm covering regex for registration section. Only user with same email pat
 
 ### Day 24
 A quick review of dart.
+### Day 25
+Flutter widgets
