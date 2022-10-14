@@ -8,14 +8,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
-        children: [
-          Text("hi")
+        children: <Widget>[
+          Container(
+            height: size.height*.3,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                alignment: Alignment.topCenter,
+                image: AssetImage('assets/images/top.png')
+              ),
+            ),
+          )
         ],
       ),
     );
   }
 }
+
 
 
