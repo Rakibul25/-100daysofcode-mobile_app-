@@ -62,26 +62,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                       ],
                     ),
+                  ),
+                  Expanded(
+                    child: GridView.count(
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      primary: false,
+                      crossAxisCount: 2,
+                      children: <Widget>[
+                        Card(
+                          child: Column(
+                            children: <Widget>[
+                              SvgPicture.asset('assets/svgimages/phone.svg')
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
             ),
           ),
-          GridView.count(
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
-            primary: false,
-            children: <Widget>[
-              Card(
-                child: Column(
-                  children: <Widget>[
-                    SvgPicture.network('https://freesvg.org/img/BenBois_Graduation.png')
-                  ],
-                ),
-              )
-            ],
-            crossAxisCount: 2,
-          )
         ],
       ),
     );
