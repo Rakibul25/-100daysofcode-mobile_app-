@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,7 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomeScreen(),
     );
   }
@@ -38,52 +37,86 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: SafeArea(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    height: 64,
-                    child: Row(
-                      children: <Widget>[
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundImage: NetworkImage('https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
-                        ),
-                        SizedBox(width: 16,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text('Person one',style: TextStyle(color: Colors.white,fontSize: 20)),
-                            Text('2342342342',style: TextStyle(color: Colors.white,fontSize: 15))
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: GridView.count(
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      primary: false,
-                      crossAxisCount: 2,
-                      children: <Widget>[
-                        Card(
-                          child: Column(
-                            children: <Widget>[
-                              SvgPicture.asset('assets/svgimages/phone.svg')
-                            ],
+      SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      height: 64,
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Row(
+                        children: <Widget>[
+                          const CircleAvatar(
+                            radius: 32,
+                            backgroundImage: NetworkImage('https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
                           ),
-                        )
-                      ],
+                          SizedBox(width: 16,),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const <Widget>[
+                              Text('Person one',style: TextStyle(color: Colors.white,fontSize: 20)),
+                              Text('2342342342',style: TextStyle(color: Colors.white,fontSize: 15))
+                            ],
+                          )
+                        ],
+                      ),
                     ),
-                  )
-                ],
+                    Expanded(
+                      child: GridView.count(
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        primary: false,
+                        crossAxisCount: 2,
+                        children: <Widget>[
+                          Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                SvgPicture.asset('assets/svgimages/phone.svg'),
+                                Text("DATA 01")
+                              ],
+                            ),
+                          ),
+                          Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                SvgPicture.asset('assets/svgimages/phone.svg'),
+                                Text("DATA 02")
+                              ],
+                            ),
+                          ),
+                          Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                SvgPicture.asset('assets/svgimages/phone.svg'),
+                                Text("DATA 03")
+                              ],
+                            ),
+                          ),
+                          Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                SvgPicture.asset('assets/svgimages/phone.svg'),
+                                Text("DATA 04")
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
         ],
       ),
     );
