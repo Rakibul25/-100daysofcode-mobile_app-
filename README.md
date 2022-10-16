@@ -72,3 +72,5 @@ Today I'm covering regex for registration section. Only user with same email pat
 A quick review of dart.
 ### Day 25
 Flutter widgets
+### Day 25 26
+Basic Flutter app with a gridview.
