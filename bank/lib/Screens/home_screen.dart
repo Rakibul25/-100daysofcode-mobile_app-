@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -31,12 +32,34 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 59,
                     width: 59,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
                         image: AssetImage('assets/images/user.jpg')
                       )
                     ),
                   )
+                ],
+              ),
+            ),
+            //card
+            SizedBox(
+              height: 25,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 16,bottom: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text('Good Morning',style: GoogleFonts.inter(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF000000)
+                  )),
+                  Text('Rakibul Islam',style: GoogleFonts.inter(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF000000)
+                  ))
                 ],
               ),
             )
