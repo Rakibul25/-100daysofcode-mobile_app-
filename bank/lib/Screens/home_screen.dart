@@ -1,3 +1,4 @@
+import 'package:bank/models/card_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,6 +62,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Color(0xFF000000)
                   ))
                 ],
+              ),
+            ),
+            Container(
+              height: 199,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.only(left: 16,right: 6),
+                itemCount: cards.length,
+                itemBuilder: (context,index){
+                  return Container(
+                    height: 199,
+                    width: 344,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      color: Color(cards[index].cardBackground),
+                    ),
+                  );
+                },
               ),
             )
           ],
