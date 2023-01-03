@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: (){
                       print('tapped');
                     },
-                      child: SvgPicture.asset('assets/svg/navbar.svg')),
+                      child: SvgPicture.asset('assets/svg/navbar.svg', height: 35,width: 35,)),
                   Container(
                     height: 59,
                     width: 59,
@@ -72,11 +72,61 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: cards.length,
                 itemBuilder: (context,index){
                   return Container(
+                    margin: EdgeInsets.only(right: 10),
                     height: 199,
                     width: 344,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(28),
                       color: Color(cards[index].cardBackground),
+                    ),
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned(child: SvgPicture.asset(cards[index].cardElementTop, height: 80, width: 80),),
+                        Positioned(
+                          bottom:0,
+                          right:0,
+                          child: SvgPicture.asset(cards[index].cardElementBottom, height: 80, width: 80),),
+                        Positioned(
+                            left: 29,
+                            top: 75,
+                            child: Text(
+                              cards[index].cardNumber,
+                              style: GoogleFonts.inter(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white
+                              ),
+                            ),
+                        ),
+                        Positioned(
+                          top: 15,
+                          left: 25,
+                          child: SvgPicture.asset(cards[index].cardType, height: 50, width: 50),),
+                        Positioned(
+                          left: 29,
+                          top: 100,
+                          child: Text(
+                            cards[index].user,
+                            style: GoogleFonts.inter(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 10,
+                          right: 85,
+                          child: Text(
+                            cards[index].cardExpired,
+                            style: GoogleFonts.inter(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black45
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 },

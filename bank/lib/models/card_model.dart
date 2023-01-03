@@ -27,10 +27,10 @@ List<CardModel> cards = cardData.map(
 var cardData = [
   {
     "user" :"Rakibul Islam",
-    "cardNumber" : "**** **** **** 2434",
+    "cardNumber" : "**** **** **** 8767",
     "cardExpired" : "04-05-2023",
     "cardType" : "assets/svg/credit-card.svg",
-    "cardBackground" : 0xFF1E1E99,
+    "cardBackground" : 0xFF009688,
     "cardElementTop" : "assets/svg/top.svg",
     "cardElementBottom" : "assets/svg/bottom.svg"
   },
