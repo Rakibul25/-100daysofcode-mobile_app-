@@ -131,6 +131,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, bottom: 13, top: 29),
+              child: Row(
+                children: <Widget>[
+                  Text('Operations')
+                ],
+              ),
             )
           ],
         ),

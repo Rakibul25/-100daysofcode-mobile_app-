@@ -42,5 +42,14 @@ var cardData = [
     "cardBackground" : 0xFFFF70A3,
     "cardElementTop" : "assets/svg/top.svg",
     "cardElementBottom" : "assets/svg/bottom.svg"
+  },
+  {
+    "user" :"Roksana Parvin",
+    "cardNumber" : "**** **** **** 8090",
+    "cardExpired" : "04-05-2023",
+    "cardType" : "assets/svg/credit-card.svg",
+    "cardBackground" : 0xFF009688,
+    "cardElementTop" : "assets/svg/top.svg",
+    "cardElementBottom" : "assets/svg/bottom.svg"
   }
 ];
