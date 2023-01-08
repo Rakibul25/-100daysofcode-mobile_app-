@@ -11,6 +11,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<T> map<T>(List list,Function handler){
+    List<T> result = [];
+    for (var i = 0;i < list.length; i++){
+      result.add(handler(i, list[i]));
+    }
+    return result;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,7 +143,15 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.only(left: 16, bottom: 13, top: 29),
               child: Row(
                 children: <Widget>[
-                  Text('Operations')
+                  Text('Operations'),
+                  Row(
+                    children: <Widget>[
+                      Container(
+
+
+                      ),
+                    ],
+                  )
                 ],
               ),
             )
