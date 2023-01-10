@@ -11,17 +11,17 @@ List<OperationModel> datas = operationsData.map((item) =>
 
 var operationsData = [
   {
-    "name": "Money\nTransfer",
+    "name": "Transfer",
     "selectedIcon": "assets/svg/money_transfer_white.svg",
     "unselectedIcon": "assets/svg/money_transfer_blue.svg"
   },
   {
-    "name": "Bank\nWithdraw",
+    "name": "Withdraw",
     "selectedIcon": "assets/svg/bank_withdraw_white.svg",
     "unselectedIcon": "assets/svg/bank_withdraw_blue.svg"
   },
   {
-    "name": "Insight\nTracking",
+    "name": "Tracking",
     "selectedIcon": "assets/svg/insight_tracking_white.svg",
     "unselectedIcon": "assets/svg/insight_tracking_blue.svg"
   },

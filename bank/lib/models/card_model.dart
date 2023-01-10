@@ -1,5 +1,7 @@
 import 'dart:ffi';
 
+import '../constants/color_constant.dart';
+
 class CardModel{
   final String user;
   final String cardNumber;
@@ -35,16 +37,16 @@ var cardData = [
     "cardElementBottom" : "assets/svg/bottom.svg"
   },
   {
-    "user" :"Mahbuba Kahnom",
+    "user" :"Name Here",
     "cardNumber" : "**** **** **** 2434",
     "cardExpired" : "04-05-2023",
     "cardType" : "assets/svg/credit-card.svg",
-    "cardBackground" : 0xFFFF70A3,
+    "cardBackground" : 0xFFFF70A6,
     "cardElementTop" : "assets/svg/top.svg",
     "cardElementBottom" : "assets/svg/bottom.svg"
   },
   {
-    "user" :"Roksana Parvin",
+    "user" :"Another Name",
     "cardNumber" : "**** **** **** 8090",
     "cardExpired" : "04-05-2023",
     "cardType" : "assets/svg/credit-card.svg",

@@ -94,8 +94,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: <Widget>[
                         Positioned(child: SvgPicture.asset(cards[index].cardElementTop, height: 80, width: 80),),
                         Positioned(
-                          bottom:0,
-                          right:0,
+                          bottom:50,
+                          right:10,
                           child: SvgPicture.asset(cards[index].cardElementBottom, height: 80, width: 80),),
                         Positioned(
                             left: 29,
@@ -144,26 +144,121 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 16, bottom: 13, top: 29),
-              child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: map<Widget>(datas,(index, selected){
-                      return Container(
-                        alignment: Alignment.centerLeft,
-                        height: 9,
-                        width: 20,
-                        margin: EdgeInsets.only(right: 15),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: current==index ? kBlueColor : kTwentyBlueColor),
-                      );
-                    }),
-                  )
+              padding:
+              EdgeInsets.only(left: 16, bottom: 13, top: 29, right: 10),
+              child: Row(
 
-            )
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+
+                  Row(
+
+                    children: map<Widget>(
+                      datas,
+                          (index, selected) {
+                        return Container(
+                          alignment: Alignment.center,
+                          height: 9,
+                          width: 9,
+                          margin: EdgeInsets.only(right: 6),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: current == index
+                                  ? kGreenColor
+                                  : kTwentyBlueColor),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
+            ),
+
+            Container(
+              height: 123,
+              child: ListView.builder(
+                itemCount: datas.length,
+                padding: EdgeInsets.only(left: 16),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current = index;
+                      });
+                    },
+                    child: OperationCard(
+                        operation: datas[index].name,
+                        selectedIcon: datas[index].selectedIcon,
+                        unselectedIcon: datas[index].unselectedIcon,
+                        isSelected: current == index,
+                        context: this),
+                  );
+                },
+              ),
+            ),
+
+
           ],
         ),
+      ),
+    );
+  }
+}
+class OperationCard extends StatefulWidget {
+  final String operation;
+  final String selectedIcon;
+  final String unselectedIcon;
+  final bool isSelected;
+  _HomeScreenState context;
+
+  OperationCard(
+      {required this.operation,
+        required this.selectedIcon,
+        required this.unselectedIcon,
+        required this.isSelected,
+        required this.context});
+
+  @override
+  _OperationCardState createState() => _OperationCardState();
+}
+
+class _OperationCardState extends State<OperationCard> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(right: 16),
+      width: 123,
+      height: 123,
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: kTenBlackColor,
+              blurRadius: 10,
+              spreadRadius: 5,
+              offset: Offset(8.0, 8.0),
+            )
+          ],
+          borderRadius: BorderRadius.circular(15),
+          color: widget.isSelected ? kGreenColor : kWhiteColor),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SvgPicture.asset(
+              widget.isSelected ? widget.selectedIcon : widget.unselectedIcon),
+          SizedBox(
+            height: 9,
+          ),
+          Text(
+            widget.operation,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.inter(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: widget.isSelected ? kWhiteColor : kGreenColor),
+          )
+        ],
       ),
     );
   }
