@@ -145,27 +145,22 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16, bottom: 13, top: 29),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text('Operations'),
+              child:
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: map<Widget>(datas,(index, selected){
                       return Container(
                         alignment: Alignment.centerLeft,
                         height: 9,
-                        width: 9,
-                        margin: EdgeInsets.only(right: 8),
+                        width: 20,
+                        margin: EdgeInsets.only(right: 15),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: current==index ? kBlueColor : kTwentyBlueColor),
-
-
                       );
                     }),
                   )
-                ],
-              ),
+
             )
           ],
         ),

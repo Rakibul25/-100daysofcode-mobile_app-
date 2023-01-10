@@ -25,4 +25,5 @@ var operationsData = [
     "selectedIcon": "assets/svg/insight_tracking_white.svg",
     "unselectedIcon": "assets/svg/insight_tracking_blue.svg"
   },
+
 ];
