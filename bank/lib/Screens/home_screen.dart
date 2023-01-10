@@ -1,4 +1,6 @@
+import 'package:bank/constants/color_constant.dart';
 import 'package:bank/models/card_model.dart';
+import 'package:bank/models/operation_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int current =0;
+
   List<T> map<T>(List list,Function handler){
     List<T> result = [];
     for (var i = 0;i < list.length; i++){
@@ -142,15 +146,23 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 16, bottom: 13, top: 29),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text('Operations'),
                   Row(
-                    children: <Widget>[
-                      Container(
+                    children: map<Widget>(datas,(index, selected){
+                      return Container(
+                        alignment: Alignment.centerLeft,
+                        height: 9,
+                        width: 9,
+                        margin: EdgeInsets.only(right: 8),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: current==index ? kBlueColor : kTwentyBlueColor),
 
 
-                      ),
-                    ],
+                      );
+                    }),
                   )
                 ],
               ),
