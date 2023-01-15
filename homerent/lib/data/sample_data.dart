@@ -1,6 +1,6 @@
 const house_Data = [
   {
-    "image" : "assets/images/image1.jpg",
+    "image" : "assets/images/image_1.jpg",
     "amount" : 20000,
     "address" : "Dhaka",
     "bedrooms" : 4,
@@ -10,7 +10,7 @@ const house_Data = [
     "description" : "helloooooo"
   },
   {
-    "image" : "assets/images/image2.jpg",
+    "image" : "assets/images/image_2.jpg",
     "amount" : 20000,
     "address" : "Dhaka",
     "bedrooms" : 4,
