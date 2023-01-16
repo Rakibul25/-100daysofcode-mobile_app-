@@ -32,18 +32,22 @@ class LandingScreen extends StatelessWidget {
                   padding: sidePadding,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      BorderBox(
+                    children:  [
+                      const BorderBox(
                         padding: EdgeInsets.all(8),
                         height: 50,
                         width: 50,
-                        child: Icon(Icons.menu, color: COLOR_BLACK),
+                        child: Icon(Icons.location_on, color: COLOR_BLACK),
                       ),
-                      BorderBox(
-                        padding: EdgeInsets.all(8),
+                      Container(
                         height: 50,
                         width: 50,
-                        child: Icon(Icons.notifications, color: COLOR_BLACK),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                            image: const DecorationImage(
+                                image: AssetImage('assets/images/user_1.jpg')
+                            )
+                        ),
                       )
                     ],
                   ),
@@ -52,7 +56,7 @@ class LandingScreen extends StatelessWidget {
                 Padding(
                   padding: sidePadding,
                   child: Text(
-                    "City",
+                    "Dhaka",
                     style: themeData.textTheme.bodyText2,
                   ),
                 ),
@@ -60,7 +64,7 @@ class LandingScreen extends StatelessWidget {
                 Padding(
                   padding: sidePadding,
                   child: Text(
-                    "Dhaka",
+                    "Bangladesh",
                     style: themeData.textTheme.headline1,
                   ),
                 ),
@@ -71,12 +75,20 @@ class LandingScreen extends StatelessWidget {
                       color: COLOR_GREY,
                     )),
                 addVerticalSpace(10),
+                Padding(
+                  padding: sidePadding,
+                  child: Text(
+                    "Sort By :",
+                    style: themeData.textTheme.bodyText2,
+                  ),
+                ),
+                addVerticalSpace(5),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   physics: BouncingScrollPhysics(),
                   child: Row(
-                    children: ["<\৳50,00000", "For Sale", "3-4 Beds", ">1000 sqft"]
-                        .map((filter) => ChoiceOption(text: filter))
+                    children: ["Best Match", "New", "Price low to high", "High to low", ">1200 sqft"]
+                        .map((fltop) => ChoiceOption(text: fltop))
                         .toList(),
                   ),
                 ),
@@ -124,11 +136,11 @@ class ChoiceOption extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: COLOR_GREY.withAlpha(25),
+        color: Colors.teal.withAlpha(20),
         borderRadius: BorderRadius.circular(20.0),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
-      margin: const EdgeInsets.only(left: 20),
+      margin: const EdgeInsets.only(left: 15),
       child: Text(
         text,
         style: themeData.textTheme.headline5,
