@@ -9,7 +9,7 @@ import '../utils/widget_functions.dart';
 class DetailPage extends StatelessWidget {
   final dynamic itemData;
 
-  const DetailPage({ @required this.itemData});
+  const DetailPage({@required this.itemData});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class DetailPage extends StatelessWidget {
                                   height: 50,
                                   width: 50,
                                   child: Icon(
-                                    Icons.favorite_border,
+                                    Icons.add_shopping_cart,
                                     color: COLOR_BLACK,
                                   ),
                                 ),
@@ -71,44 +71,40 @@ class DetailPage extends StatelessWidget {
                       ],
                     ),
                     addVerticalSpace(padding),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: sidePadding,
+                          child: Text(
+                            "${itemData["address"]}",
+                            style: themeData.textTheme.subtitle1,
+                          ),
+                        ),
+                        Padding(
+                          padding: sidePadding,
+                          child: Text(
+                            "\$${itemData["amount"]}",
+                            style: themeData.textTheme.headline3,
+                          ),
+                        ),
+                      ],
+                    ),
+                    addVerticalSpace(padding),
                     Padding(
                       padding: sidePadding,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "${formatCurrency(itemData["amount"])}",
-                                style: themeData.textTheme.headline1,
-                              ),
-                              addVerticalSpace(5),
-                              Text(
-                                "\$${itemData["address"]}",
-                                style: themeData.textTheme.subtitle2,
-                              ),
-                            ],
+                          Text(
+                            "Rent Info",
+                            style: themeData.textTheme.headline4,
                           ),
-                          BorderBox(
-                            height: 50,
-                            width: 50,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 15, horizontal: 15),
-                            child: Text(
-                              "20 Hours ago",
-                              style: themeData.textTheme.headline5,
-                            ),
-                          )
+                          Text(
+                            "30 Hours ago",
+                            style: themeData.textTheme.headline6,
+                          ),
                         ],
-                      ),
-                    ),
-                    addVerticalSpace(padding),
-                    Padding(
-                      padding: sidePadding,
-                      child: Text(
-                        "House Information",
-                        style: themeData.textTheme.headline4,
                       ),
                     ),
                     addVerticalSpace(padding),
@@ -119,7 +115,7 @@ class DetailPage extends StatelessWidget {
                         children: [
                           InformationTile(
                             content: "${itemData["area"]}",
-                            name: "Square Foot",
+                            name: "SF",
                           ),
                           InformationTile(
                             content: "${itemData["bedrooms"]}",
@@ -132,7 +128,7 @@ class DetailPage extends StatelessWidget {
                           InformationTile(
                             content: "${itemData["garage"]}",
                             name: "Garage",
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -156,16 +152,11 @@ class DetailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     OptionButton(
-                      text: "Message",
-                      icon: Icons.message,
+                      text: "Chat",
+                      icon: Icons.chat_bubble,
                       width: size.width * 0.35,
                     ),
-                    addHorizontalSpace(10),
-                    OptionButton(
-                      text: "Call",
-                      icon: Icons.call,
-                      width: size.width * 0.35,
-                    ),
+
                   ],
                 ),
               )
@@ -181,21 +172,20 @@ class InformationTile extends StatelessWidget {
   final String content;
   final String name;
 
-  const InformationTile({ required this.content, required this.name})
-      ;
+  const InformationTile({required this.content, required this.name});
 
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     final Size size = MediaQuery.of(context).size;
-    final double tileSize = size.width * 0.20;
+    final double tileSize = size.width * 0.10;
     return Container(
       margin: const EdgeInsets.only(left: 25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           BorderBox(
-            padding: EdgeInsets.all(8),
+              padding: EdgeInsets.all(8),
               width: tileSize,
               height: tileSize,
               child: Text(

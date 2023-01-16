@@ -22,7 +22,7 @@ class LandingScreen extends StatelessWidget {
       body: Container(
         height: size.height,
         width: size.width,
-        child: Stack (
+        child: Stack(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +32,7 @@ class LandingScreen extends StatelessWidget {
                   padding: sidePadding,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children:  [
+                    children: [
                       const BorderBox(
                         padding: EdgeInsets.all(8),
                         height: 50,
@@ -40,14 +40,19 @@ class LandingScreen extends StatelessWidget {
                         child: Icon(Icons.location_on, color: COLOR_BLACK),
                       ),
                       Container(
+                        height: 100,
+                        width: 80,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/logo.png'))),
+                      ),
+                      Container(
                         height: 50,
                         width: 50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
+                            borderRadius: BorderRadius.circular(50),
                             image: const DecorationImage(
-                                image: AssetImage('assets/images/user_1.jpg')
-                            )
-                        ),
+                                image: AssetImage('assets/images/user_1.jpg'))),
                       )
                     ],
                   ),
@@ -87,9 +92,13 @@ class LandingScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   physics: BouncingScrollPhysics(),
                   child: Row(
-                    children: ["Best Match", "New", "Price low to high", "High to low", ">1200 sqft"]
-                        .map((fltop) => ChoiceOption(text: fltop))
-                        .toList(),
+                    children: [
+                      "Best Match",
+                      "New",
+                      "Price low to high",
+                      "High to low",
+                      ">1200 sqft"
+                    ].map((fltop) => ChoiceOption(text: fltop)).toList(),
                   ),
                 ),
                 addVerticalSpace(10),
@@ -97,7 +106,7 @@ class LandingScreen extends StatelessWidget {
                   child: Padding(
                     padding: sidePadding,
                     child: ListView.builder(
-                        physics: BouncingScrollPhysics(),
+                        physics: const BouncingScrollPhysics(),
                         itemCount: house_Data.length,
                         itemBuilder: (context, index) {
                           return RealEstateItem(
@@ -114,7 +123,7 @@ class LandingScreen extends StatelessWidget {
               child: Center(
                 child: OptionButton(
                   text: "Map View",
-                  icon: Icons.map_rounded,
+                  icon: Icons.map,
                   width: size.width * 0.35,
                 ),
               ),
@@ -182,7 +191,7 @@ class RealEstateItem extends StatelessWidget {
                         height: 50,
                         width: 50,
                         child: Icon(
-                          Icons.favorite_border,
+                          Icons.more,
                           color: COLOR_BLACK,
                         )))
               ],
@@ -191,21 +200,16 @@ class RealEstateItem extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  formatCurrency(itemData["amount"]),
-                  style: themeData.textTheme.headline1,
+                  "${itemData["address"]} \n ${itemData["bedrooms"]} bedrooms / ${itemData["bathrooms"]} bathrooms / ${itemData["area"]} sqft",
+                  style: themeData.textTheme.bodyText2,
                 ),
                 addHorizontalSpace(10),
-                Text(
-                  "${itemData["address"]}",
-                  style: themeData.textTheme.bodyText2,
-                )
               ],
             ),
-            addVerticalSpace(10),
             Text(
-              "${itemData["bedrooms"]} bedrooms / ${itemData["bathrooms"]} bathrooms / ${itemData["area"]} sqft",
-              style: themeData.textTheme.headline5,
-            )
+              formatCurrency(itemData["amount"]),
+              style: themeData.textTheme.headline2,
+            ),
           ],
         ),
       ),
