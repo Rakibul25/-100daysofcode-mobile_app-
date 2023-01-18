@@ -13,15 +13,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int current =0;
-
-  List<T> map<T>(List list,Function handler){
+  int current = 0;
+  var nameController = TextEditingController();
+  List<T> map<T>(List list, Function handler) {
     List<T> result = [];
-    for (var i = 0;i < list.length; i++){
+    for (var i = 0; i < list.length; i++) {
       result.add(handler(i, list[i]));
     }
     return result;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +37,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   GestureDetector(
-                    onTap: (){
-                      print('tapped');
-                    },
-                      child: SvgPicture.asset('assets/svg/navbar.svg', height: 35,width: 35,)),
+                      onTap: () {
+                        print('tapped');
+                      },
+                      child: SvgPicture.asset(
+                        'assets/svg/navbar.svg',
+                        height: 35,
+                        width: 35,
+                      )),
                   Container(
                     height: 59,
                     width: 59,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/user.jpg')
-                      )
-                    ),
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/user.jpg'))),
                   )
                 ],
               ),
@@ -58,20 +61,20 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 25,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 16,bottom: 16),
+              padding: EdgeInsets.only(left: 16, bottom: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Good Morning',style: GoogleFonts.inter(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF000000)
-                  )),
-                  Text('Rakibul Islam',style: GoogleFonts.inter(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xFF000000)
-                  ))
+                  Text('Good Morning',
+                      style: GoogleFonts.inter(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF000000))),
+                  Text('Rakibul Islam',
+                      style: GoogleFonts.inter(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF000000)))
                 ],
               ),
             ),
@@ -79,9 +82,9 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 199,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.only(left: 16,right: 6),
+                padding: EdgeInsets.only(left: 16, right: 6),
                 itemCount: cards.length,
-                itemBuilder: (context,index){
+                itemBuilder: (context, index) {
                   return Container(
                     margin: EdgeInsets.only(right: 10),
                     height: 199,
@@ -92,27 +95,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Stack(
                       children: <Widget>[
-                        Positioned(child: SvgPicture.asset(cards[index].cardElementTop, height: 80, width: 80),),
                         Positioned(
-                          bottom:50,
-                          right:10,
-                          child: SvgPicture.asset(cards[index].cardElementBottom, height: 80, width: 80),),
+                          child: SvgPicture.asset(cards[index].cardElementTop,
+                              height: 80, width: 80),
+                        ),
                         Positioned(
-                            left: 29,
-                            top: 75,
-                            child: Text(
-                              cards[index].cardNumber,
-                              style: GoogleFonts.inter(
+                          bottom: 50,
+                          right: 10,
+                          child: SvgPicture.asset(
+                              cards[index].cardElementBottom,
+                              height: 80,
+                              width: 80),
+                        ),
+                        Positioned(
+                          left: 29,
+                          top: 75,
+                          child: Text(
+                            cards[index].cardNumber,
+                            style: GoogleFonts.inter(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700,
-                                color: Colors.white
-                              ),
-                            ),
+                                color: Colors.white),
+                          ),
                         ),
                         Positioned(
                           top: 15,
                           left: 25,
-                          child: SvgPicture.asset(cards[index].cardType, height: 50, width: 50),),
+                          child: SvgPicture.asset(cards[index].cardType,
+                              height: 50, width: 50),
+                        ),
                         Positioned(
                           left: 29,
                           top: 100,
@@ -121,8 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: GoogleFonts.inter(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700,
-                                color: Colors.white
-                            ),
+                                color: Colors.white),
                           ),
                         ),
                         Positioned(
@@ -133,8 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: GoogleFonts.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.black45
-                            ),
+                                color: Colors.black45),
                           ),
                         ),
                       ],
@@ -145,17 +154,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding:
-              EdgeInsets.only(left: 16, bottom: 13, top: 29, right: 10),
+                  EdgeInsets.only(left: 16, bottom: 13, top: 29, right: 10),
               child: Row(
-
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-
                   Row(
-
                     children: map<Widget>(
                       datas,
-                          (index, selected) {
+                      (index, selected) {
                         return Container(
                           alignment: Alignment.center,
                           height: 9,
@@ -198,13 +204,33 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-
+            Padding(
+              padding: EdgeInsets.only(left: 16, bottom: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  TextField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        labelText: 'Enter Name',
+                        ),
+                  ),
+                  SizedBox(height: 11),
+                  ElevatedButton(onPressed: (){
+                    var name = nameController.text.toString();
+                    print(name);
+                  }, child: Text('Save'))
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
 class OperationCard extends StatefulWidget {
   final String operation;
   final String selectedIcon;
@@ -214,10 +240,10 @@ class OperationCard extends StatefulWidget {
 
   OperationCard(
       {required this.operation,
-        required this.selectedIcon,
-        required this.unselectedIcon,
-        required this.isSelected,
-        required this.context});
+      required this.selectedIcon,
+      required this.unselectedIcon,
+      required this.isSelected,
+      required this.context});
 
   @override
   _OperationCardState createState() => _OperationCardState();
