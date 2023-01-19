@@ -4,6 +4,7 @@ import 'package:bank/models/operation_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int current = 0;
   var nameController = TextEditingController();
+  var nameValue = "";
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
     for (var i = 0; i < list.length; i++) {
@@ -22,7 +24,12 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     return result;
   }
-
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getValue();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,9 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
                           color: Color(0xFF000000))),
-                  Text('Rakibul Islam',
+                  Text(nameValue,
                       style: GoogleFonts.inter(
-                          fontSize: 30,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700,
                           color: Color(0xFF000000)))
                 ],
@@ -217,9 +224,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                   ),
                   SizedBox(height: 11),
-                  ElevatedButton(onPressed: (){
+                  ElevatedButton(onPressed: () async {
                     var name = nameController.text.toString();
-                    print(name);
+                    var prefs = await SharedPreferences.getInstance();
+                    prefs.setString("name", name);
                   }, child: Text('Save'))
                 ],
               ),
@@ -228,6 +236,15 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> getValue() async {
+    var prefs =await SharedPreferences.getInstance();
+    var getName = prefs.getString("name");
+    nameValue = getName ?? "Name Here";
+    setState(() {
+
+    });
   }
 }
 
