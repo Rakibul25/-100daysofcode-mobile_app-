@@ -1,3 +1,5 @@
+import 'package:bank/Screens/login.dart';
+import 'package:bank/Screens/splash.dart';
 import 'package:bank/constants/color_constant.dart';
 import 'package:bank/models/card_model.dart';
 import 'package:bank/models/operation_model.dart';
@@ -17,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int current = 0;
   var nameController = TextEditingController();
   var nameValue = "";
+
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
     for (var i = 0; i < list.length; i++) {
@@ -24,12 +27,14 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     return result;
   }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     getValue();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,14 +57,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 35,
                         width: 35,
                       )),
-                  Container(
-                    height: 59,
-                    width: 59,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/user.jpg'))),
-                  )
+                  Column(
+                    children: [
+                      Container(
+                        height: 59,
+                        width: 59,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/user.jpg'))),
+                      ),
+                      SizedBox(height: 11),
+                      ElevatedButton(
+                          onPressed: () async {
+                            var sharedpref = await SharedPreferences.getInstance();
+                            sharedpref.setBool(SplashState.keylogin, false);
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const logIn()));
+                          },
+                          child: Text('Log Out'))
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -219,16 +236,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   TextField(
                     controller: nameController,
                     decoration: InputDecoration(
-                        border: InputBorder.none,
-                        labelText: 'Enter Name',
-                        ),
+                      border: InputBorder.none,
+                      labelText: 'Enter Name',
+                    ),
                   ),
                   SizedBox(height: 11),
-                  ElevatedButton(onPressed: () async {
-                    var name = nameController.text.toString();
-                    var prefs = await SharedPreferences.getInstance();
-                    prefs.setString("name", name);
-                  }, child: Text('Save'))
+                  ElevatedButton(
+                      onPressed: () async {
+                        var name = nameController.text.toString();
+                        var prefs = await SharedPreferences.getInstance();
+                        prefs.setString("name", name);
+                      },
+                      child: Text('Save'))
                 ],
               ),
             ),
@@ -239,12 +258,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> getValue() async {
-    var prefs =await SharedPreferences.getInstance();
+    var prefs = await SharedPreferences.getInstance();
     var getName = prefs.getString("name");
     nameValue = getName ?? "Name Here";
-    setState(() {
-
-    });
+    setState(() {});
   }
 }
 

@@ -1,5 +1,7 @@
 import 'package:bank/Screens/home_screen.dart';
+import 'package:bank/Screens/splash.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class logIn extends StatefulWidget {
   const logIn({Key? key}) : super(key: key);
@@ -53,10 +55,10 @@ class _logInState extends State<logIn> {
                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                     child: ElevatedButton(
                       child: const Text('Login'),
-                      onPressed: () {
+                      onPressed: () async {
+                        var sharedpref = await SharedPreferences.getInstance();
+                        sharedpref.setBool(SplashState.keylogin, true);
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
-                        print(nameController.text);
-                        print(passwordController.text);
                       },
                     )),
               ],
