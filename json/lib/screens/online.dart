@@ -4,10 +4,8 @@ class Online extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Text('Oneline'),
-      ),
+    return const Center(
+      child: Text('Online'),
     );
   }
 }
