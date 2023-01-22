@@ -1,0 +1,42 @@
+[
+    {
+      "code": "100A",
+      "coursename": "Algorithm(Section A)",
+      "faculty": "rakib"
+    },
+    {
+      "code": "100B",
+      "coursename": "Algorithm(Section B)",
+      "faculty": "r"
+    },
+    {
+      "code": "101A",
+      "coursename": "Database(Section A)",
+      "faculty": "rakib"
+    },
+    {
+      "code": "101B",
+      "coursename": "Database(Section B)",
+      "faculty": "r"
+    },
+    {
+      "code": "200A",
+      "coursename": "physics(Section A)",
+      "faculty": "miral"
+    },
+    {
+      "code": "183A",
+      "coursename": "Math(Section A)",
+      "faculty": "prince"
+    },
+    {
+      "code": "math123",
+      "coursename": "Math(Section A)",
+      "faculty": "rimon"
+    },
+    {
+      "code": "che234",
+      "coursename": "Chemistry(Section B)",
+      "faculty": "rimon"
+    }
+  ]
