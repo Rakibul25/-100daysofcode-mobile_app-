@@ -12,7 +12,6 @@ class Offline extends StatefulWidget {
 
 class _OfflineState extends State<Offline> {
   List _items = [];
-
   Future<void> readJson() async {
     final String response =
         await rootBundle.loadString('assets/offlinejson.json');
