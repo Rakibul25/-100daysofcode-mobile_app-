@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:rakib/constants/color_constants.dart';
 
-class HomePc extends StatelessWidget {
+class HomePc extends StatefulWidget {
   const HomePc({Key? key}) : super(key: key);
 
   @override
+  State<HomePc> createState() => _HomePcState();
+}
+
+class _HomePcState extends State<HomePc> {
+  @override
   Widget build(BuildContext context) {
+    bool isHovering = false;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: PreferredSize(
@@ -28,11 +34,40 @@ class HomePc extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      InkWell(
-                        onTap: () {},
-                        child: const Text(
-                          'Home',
-                          style: TextStyle(color: Colors.white),
+                      GestureDetector(
+                        child: InkWell(
+                          onTap: (){
+                            setState(() {
+                              isHovering = true;
+                            });
+                          },
+
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                isHovering.toString(),
+                                style: TextStyle(
+                                  color: isHovering
+                                      ? Colors.blue.shade200
+                                      : Colors.white,
+                                ),
+                              ),
+                              SizedBox(height: 5),
+                              // For showing an underline on hover
+                              Visibility(
+                                maintainAnimation: true,
+                                maintainState: true,
+                                maintainSize: true,
+                                visible: isHovering,
+                                child: Container(
+                                  height: 2,
+                                  width: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              ],
+                          ),
                         ),
                       ),
                     ],
@@ -41,26 +76,7 @@ class HomePc extends StatelessWidget {
                 SizedBox(
                   width: width / 50,
                 ),
-                InkWell(
-                  onTap: () {},
-                  child: const Text(
-                    'Download CV',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                SizedBox(
-                  width: width / 50,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: const Text(
-                    'Contact',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                SizedBox(
-                  width: width / 50,
-                ),
+
               ],
             ),
           ),
