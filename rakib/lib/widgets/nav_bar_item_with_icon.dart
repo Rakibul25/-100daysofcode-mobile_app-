@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utils/custom_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../utils/custom_colors.dart';
 
 class NavBarItemWithIcon extends StatelessWidget {
   final String text;

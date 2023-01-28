@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/utils/breakpoints.dart';
-import 'package:portfolio/utils/custom_colors.dart';
+
+import '../utils/breakpoints.dart';
+import '../utils/custom_colors.dart';
+
 
 class SkillCard extends StatelessWidget {
   final String title;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/utils/custom_colors.dart';
+
+import '../utils/custom_colors.dart';
 
 class Intrest extends StatelessWidget {
   final Color color;

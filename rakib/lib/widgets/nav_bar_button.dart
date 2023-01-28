@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utils/breakpoints.dart';
-import 'package:portfolio/utils/custom_colors.dart';
+
+import '../utils/breakpoints.dart';
+import '../utils/custom_colors.dart';
+
 
 class NavBarButton extends StatelessWidget {
   final Function onPressed;

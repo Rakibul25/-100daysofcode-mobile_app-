@@ -9,6 +9,6 @@ class ImageAssetConstants{
   static const String pythonCircle='assets/images/python_circle.png';
   static const String java='assets/images/java.png';
   static const String python='assets/images/python.png';
-  static const String khalid='assets/images/khalid.png';
+  static const String rakib='assets/images/myavatar.png';
   static const String backendIcon='assets/images/backend_icon.png';
 }

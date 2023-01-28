@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/utils/breakpoints.dart';
-import 'package:portfolio/utils/custom_colors.dart';
-import 'package:portfolio/utils/image_asset_constants.dart';
-import 'package:portfolio/widgets/hello_with_bio.dart';
-import 'package:portfolio/widgets/info.dart';
-import 'package:portfolio/widgets/intrest.dart';
-import 'package:portfolio/widgets/skill_card.dart';
+import 'package:rakib/widgets/skill_card.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import '../utils/breakpoints.dart';
+import '../utils/custom_colors.dart';
+import '../utils/image_asset_constants.dart';
+import 'hello_with_bio.dart';
+import 'info.dart';
+import 'intrest.dart';
+
 
 class LowerContainer extends StatelessWidget {
   final double width;

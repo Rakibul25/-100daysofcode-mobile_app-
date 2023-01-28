@@ -93,14 +93,19 @@ class _PortfolioState extends State<Portfolio> {
       floatingActionButton: ObxValue<RxBool>(
               (data) => Visibility(
             visible: data.value,
-            child: FloatingActionButton(
-                onPressed: () => scrollController.animateTo(
-                    scrollController.position.minScrollExtent,
-                    duration: const Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
-                backgroundColor: CustomColors.primary,
-                child: const Icon(Icons.arrow_upward,
-                    color: CustomColors.darkBackground)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FloatingActionButton(
+                    onPressed: () => scrollController.animateTo(
+                        scrollController.position.minScrollExtent,
+                        duration: const Duration(milliseconds: 700),
+                        curve: Curves.bounceOut),
+                    backgroundColor: CustomColors.primary,
+                    child: const Icon(Icons.arrow_upward,
+                        color: CustomColors.darkBackground)),
+              ],
+            ),
           ),
           showFloatingButton),
       body: Container(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utils/breakpoints.dart';
-import 'package:portfolio/utils/custom_colors.dart';
-import 'package:portfolio/widgets/description.dart';
-import 'package:portfolio/widgets/khalid_image.dart';
+
+import '../utils/breakpoints.dart';
+import '../utils/custom_colors.dart';
+import 'description.dart';
+import 'khalid_image.dart';
+
 
 class UpperContainer extends StatelessWidget {
   final double width;

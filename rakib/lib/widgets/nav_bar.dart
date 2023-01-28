@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/utils/breakpoints.dart';
-import 'package:portfolio/utils/custom_colors.dart';
-import 'package:portfolio/utils/image_asset_constants.dart';
-import 'package:portfolio/widgets/logo.dart';
-import 'package:portfolio/widgets/nav_bar_button.dart';
-import 'package:portfolio/widgets/nav_bar_item.dart';
-import 'package:portfolio/widgets/nav_bar_item_with_icon.dart';
+
 import 'package:url_launcher/url_launcher.dart';
+
+import '../utils/breakpoints.dart';
+import '../utils/custom_colors.dart';
+import '../utils/image_asset_constants.dart';
+import 'logo.dart';
+import 'nav_bar_button.dart';
+import 'nav_bar_item.dart';
+import 'nav_bar_item_with_icon.dart';
 
 class NavBar extends StatelessWidget {
   final double width;

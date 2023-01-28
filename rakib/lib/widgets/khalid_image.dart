@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utils/custom_colors.dart';
-import 'package:portfolio/utils/image_asset_constants.dart';
+
+import '../utils/custom_colors.dart';
+import '../utils/image_asset_constants.dart';
+
 
 class KhalidImage extends StatelessWidget {
   final double width;
@@ -17,7 +19,7 @@ class KhalidImage extends StatelessWidget {
         Container(
           constraints:const BoxConstraints(maxWidth:370),
           child: Image.asset(
-            ImageAssetConstants.khalid,
+            ImageAssetConstants.rakib,
             width: width * 0.29,
             height: width * 0.3,
           ),
