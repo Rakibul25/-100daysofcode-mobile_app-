@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rakib/screen/home.dart';
+import 'package:rakib/screen/portfolio.dart';
+import 'package:rakib/utils/custom_colors.dart';
 
 
 void main() {
@@ -16,23 +17,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Rakibul Islam',
       theme: ThemeData(
+        primaryColor:
+        CustomColors.primary,
+        splashColor: CustomColors.primary,
+        highlightColor:CustomColors.primary,
 
-        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const Portfolio(),
     );
   }
 }
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
 
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Home();
-
-  }
-}
