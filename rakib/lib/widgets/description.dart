@@ -8,8 +8,8 @@ import '../utils/custom_colors.dart';
 class Description extends StatelessWidget {
   final bool isVertical;
   final double width;
-  const Description(
-      {required this.isVertical, required this.width, Key? key})
+
+  const Description({required this.isVertical, required this.width, Key? key})
       : super(key: key);
 
   @override
@@ -20,22 +20,11 @@ class Description extends StatelessWidget {
         crossAxisAlignment:
             isVertical ? CrossAxisAlignment.center : CrossAxisAlignment.start,
         children: [
-          Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              width: 135,
-              height: 40,
-              alignment: Alignment.center,
-              color: CustomColors.primary,
-              child: Center(
-                  child: Text('Software Engineer',
-                      style: GoogleFonts.getFont('Days One',
-                          color: Colors.black, fontSize: 10)))),
-          SizedBox(height: 0.015 * width),
-          Text('Talk is cheap.',
+          Text('Hi There!',
               style: GoogleFonts.getFont('Delius',
                   color: Colors.white, fontSize: 30)),
           const SizedBox(height: 5),
-          Text('Show me the code.',
+          Text("I'm Rakibul Islam",
               style: GoogleFonts.getFont('Delius',
                   color: Colors.white, fontSize: 30)),
           const SizedBox(height: 20),
@@ -50,15 +39,14 @@ class Description extends StatelessWidget {
                     "I'm developing mobile,frontend and backend applications",
                     textAlign: isVertical ? TextAlign.center : TextAlign.start,
                     textStyle: GoogleFonts.getFont('Delius',
-                        color: CustomColors.gray,
-                        fontSize: 15)),
+                        color: CustomColors.gray, fontSize: 15)),
               ],
             ),
           ),
           InkWell(
             onTap: () async => !await launch(
                 'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
-            child: Text("Let's chat",
+            child: Text("Download My CV",
                 style: GoogleFonts.getFont('Delius',
                     decoration: TextDecoration.underline,
                     color: CustomColors.primary,

@@ -34,17 +34,17 @@ class _PortfolioState extends State<Portfolio> {
 
     intrests = [
       {
-        'intrest': 'Beatbox',
+        'intrest': 'Writing',
         'color': CustomColors.primary,
         'textColor': CustomColors.darkBackground,
       },
       {
-        'intrest': 'Chess',
+        'intrest': 'Travelling',
         'color': CustomColors.brightBackground,
         'textColor': CustomColors.primary,
       },
       {
-        'intrest': 'Soccer',
+        'intrest': 'Reading',
         'color': CustomColors.primary,
         'textColor': CustomColors.darkBackground,
       },
@@ -54,19 +54,9 @@ class _PortfolioState extends State<Portfolio> {
         'textColor': CustomColors.primary,
       },
       {
-        'intrest': 'Watching movies',
-        'color': CustomColors.brightBackground,
-        'textColor': CustomColors.primary,
-      },
-      {
         'intrest': 'Math',
         'color': CustomColors.primary,
         'textColor': CustomColors.darkBackground,
-      },
-      {
-        'intrest': 'Learning English',
-        'color': CustomColors.brightBackground,
-        'textColor': CustomColors.primary,
       },
       {
         'intrest': 'Solving Problems',
@@ -100,7 +90,7 @@ class _PortfolioState extends State<Portfolio> {
                     onPressed: () => scrollController.animateTo(
                         scrollController.position.minScrollExtent,
                         duration: const Duration(milliseconds: 700),
-                        curve: Curves.bounceOut),
+                        curve: Curves.fastOutSlowIn),
                     backgroundColor: CustomColors.primary,
                     child: const Icon(Icons.arrow_upward,
                         color: CustomColors.darkBackground)),
