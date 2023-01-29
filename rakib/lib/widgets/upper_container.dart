@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
 import 'description.dart';
+import 'hello_with_bio.dart';
+import 'info.dart';
 import 'khalid_image.dart';
 
 
@@ -22,15 +24,20 @@ class UpperContainer extends StatelessWidget {
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: width * 0.02),
+              const SizedBox(width: 20),
+              HelloWithBio(width: 0.45 * width,ratio: 0.5,),
+              const SizedBox(
+                height: 35,
+              ),
+              const SizedBox(width: 30),
+              KhalidImage(
+                width: width,
+              ),
               Description(
                 isVertical: false,
                 width: width,
               ),
-              const SizedBox(width: 20),
-              KhalidImage(
-                width: width,
-              )
+
             ],
           );
         } else if (consraints.maxWidth < Breakpoints.lg && consraints.maxWidth >= Breakpoints.md) {

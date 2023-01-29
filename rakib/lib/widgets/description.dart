@@ -20,14 +20,6 @@ class Description extends StatelessWidget {
         crossAxisAlignment:
             isVertical ? CrossAxisAlignment.center : CrossAxisAlignment.start,
         children: [
-          Text('Hi There!',
-              style: GoogleFonts.getFont('Delius',
-                  color: Colors.white, fontSize: 30)),
-          const SizedBox(height: 5),
-          Text("I'm Rakibul Islam",
-              style: GoogleFonts.getFont('Delius',
-                  color: Colors.white, fontSize: 30)),
-          const SizedBox(height: 20),
           SizedBox(
             width: isVertical ? double.infinity : width * 0.29,
             height: 90,
@@ -46,7 +38,7 @@ class Description extends StatelessWidget {
           InkWell(
             onTap: () async => !await launch(
                 'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
-            child: Text("Download My CV",
+            child: Text("Hire Me",
                 style: GoogleFonts.getFont('Delius',
                     decoration: TextDecoration.underline,
                     color: CustomColors.primary,

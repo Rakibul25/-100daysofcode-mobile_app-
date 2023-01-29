@@ -179,8 +179,8 @@ class LowerContainer extends StatelessWidget {
                   width: width * 0.76,
                   height: 180,
                   child: StaggeredGridView.countBuilder(
-                    crossAxisCount: 8,
-                    itemCount: 8,
+                    crossAxisCount: 6,
+                    itemCount: 6,
                     itemBuilder: (BuildContext context, int index) => Intrest(
                       intrest: intrests[index]['intrest'],
                       color: intrests[index]['color'],
@@ -200,8 +200,8 @@ class LowerContainer extends StatelessWidget {
                   width: width * 0.76,
                   height: 360,
                   child: StaggeredGridView.countBuilder(
-                    crossAxisCount: 8,
-                    itemCount: 8,
+                    crossAxisCount: 6,
+                    itemCount: 6,
                     itemBuilder: (BuildContext context, int index) => Intrest(
                       intrest: intrests[index]['intrest'],
                       color: intrests[index]['color'],
@@ -210,7 +210,7 @@ class LowerContainer extends StatelessWidget {
                     ),
                     staggeredTileBuilder: (int index) =>
                         const StaggeredTile.fit(
-                      8,
+                      6,
                     ),
                     mainAxisSpacing: 10.0,
                     crossAxisSpacing: 40.0,
