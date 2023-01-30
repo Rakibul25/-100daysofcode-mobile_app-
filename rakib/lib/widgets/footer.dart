@@ -15,51 +15,16 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         color: CustomColors.darkBackground,
-        padding: const EdgeInsets.symmetric(vertical: 20),
         width: width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-             Logo(width: width,scrollController: scrollController,),
-             const SizedBox(height:22),
-          width > Breakpoints.sm
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                   Text('Copyright © 2021 khalid-alsaleh-dev',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                  Text('All rights reserved',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                  Text('khalidlionel.2089@gmail.com',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                ],
-              )
-            : Column(
-                children: [
-                  Text('Copyright © 2021 khalid-alsaleh-dev',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                          const SizedBox(height: 10),
-                          Text(' All rights reserved',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                  const SizedBox(height: 10),
-                  Text('khalidlionel.2089@gmail.com',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                ],
-              ),
-             
-        ],)
+            Text('Made with ❤ ©Rakibul Islam',
+                style: GoogleFonts.getFont('Delius',
+                    color: CustomColors.gray,
+                    fontSize: 14)),
+          ],
+        ),
               );
   }
 }

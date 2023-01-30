@@ -42,7 +42,16 @@ class ProjectCard extends StatelessWidget {
                   Text(description,
                       style: GoogleFonts.getFont('Delius',
                           color: CustomColors.gray, fontSize: 12)),
-
+                  const SizedBox(height: 10),
+                  InkWell(
+                    onTap: () async => !await launch(
+                        'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
+                    child: Text("View in github",
+                        style: GoogleFonts.getFont('Delius',
+                            decoration: TextDecoration.underline,
+                            color: CustomColors.primary,
+                            fontSize: 16)),
+                  )
 
                 ],
               ),

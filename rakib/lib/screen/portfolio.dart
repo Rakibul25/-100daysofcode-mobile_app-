@@ -49,7 +49,7 @@ class _PortfolioState extends State<Portfolio> {
         'textColor': CustomColors.darkBackground,
       },
       {
-        'intrest': 'Listening to music',
+        'intrest': 'Photography',
         'color': CustomColors.brightBackground,
         'textColor': CustomColors.primary,
       },

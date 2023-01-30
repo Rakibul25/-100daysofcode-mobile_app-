@@ -4,16 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
 
-
 class SkillCard extends StatelessWidget {
   final String title;
   final double width;
   final double ratio;
+
   const SkillCard(
-      {required this.title,
-      required this.width,
-      required this.ratio,
-      Key? key})
+      {required this.title, required this.width, required this.ratio, Key? key})
       : super(key: key);
 
   @override
@@ -34,9 +31,8 @@ class SkillCard extends StatelessWidget {
                 children: [
                   Text(title,
                       style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.primary,
-                          fontSize: 12)),
-                  const SizedBox(height: 10),
+                          color: CustomColors.gray, fontSize: 12)),
+
 
                 ],
               ),

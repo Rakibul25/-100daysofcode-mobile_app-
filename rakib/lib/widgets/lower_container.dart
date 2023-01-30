@@ -4,13 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:rakib/widgets/project_card.dart';
 import 'package:rakib/widgets/skill_card.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
 import '../utils/image_asset_constants.dart';
 import 'hello_with_bio.dart';
 import 'info.dart';
 import 'intrest.dart';
-
 
 class LowerContainer extends StatelessWidget {
   final double width;
@@ -33,79 +33,94 @@ class LowerContainer extends StatelessWidget {
         key: skillsKey,
         color: CustomColors.darkBackground,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(height: 30),
+            const SizedBox(height: 40),
             LayoutBuilder(builder: (context, constraints) {
               if (constraints.maxWidth >= Breakpoints.lg) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                return Column(
                   children: [
-                    // skills cards
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                    Text("Projects",
+                        style: GoogleFonts.getFont('Delius',
+                            decoration: TextDecoration.underline,
+                            color: CustomColors.primary,
+                            fontSize: 20)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Skills",
-                            style: GoogleFonts.getFont('Delius',
-                                decoration: TextDecoration.underline,
-                                color: CustomColors.primary,
-                                fontSize: 20)),
-                        const SizedBox(height: 10),
-                        SkillCard(
-                          title: 'Flutter Development',
-                          width: width,
-                          ratio: 0.15,
+                        // skills cards
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const SizedBox(height: 10),
+                            ProjectCard(
+                              title: 'Flutter Development',
+                              description:
+                                  'I’m developing android,ios and web applications using flutter platform.',
+                              width: width,
+                              ratio: 0.35,
+                            ),
+                            const SizedBox(height: 10),
+                            ProjectCard(
+                              title: 'Backend Development',
+                              description:
+                                  'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                              width: width,
+                              ratio: 0.35,
+                            ),
+                            const SizedBox(height: 10),
+                            ProjectCard(
+                                title: 'Python Development',
+                                description:
+                                    'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                                width: width,
+                                ratio: 0.35),
+                          ],
                         ),
-                        const SizedBox(height: 10),
-                        SkillCard(
-                          title: 'Backend Development',
-                          width: width,
-                          ratio: 0.15,
+                        SizedBox(width: 0.05 * width),
+                        // hello with bio and info
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const SizedBox(height: 10),
+                            ProjectCard(
+                              title: 'Flutter Development',
+                              description:
+                                  'I’m developing android,ios and web applications using flutter platform.',
+                              width: width,
+                              ratio: 0.35,
+                            ),
+                            const SizedBox(height: 10),
+                            ProjectCard(
+                              title: 'Backend Development',
+                              description:
+                                  'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                              width: width,
+                              ratio: 0.35,
+                            ),
+                            const SizedBox(height: 10),
+                            ProjectCard(
+                                title: 'Python Development',
+                                description:
+                                    'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                                width: width,
+                                ratio: 0.35),
+
+                          ],
                         ),
-                        const SizedBox(height: 10),
-                        SkillCard(
-                            title: 'Python Development',
-                            width: width,
-                            ratio: 0.15),
                       ],
                     ),
-                    SizedBox(width: 0.05 * width),
-                    // hello with bio and info
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text("projects",
-                            style: GoogleFonts.getFont('Delius',
-                                decoration: TextDecoration.underline,
-                                color: CustomColors.primary,
-                                fontSize: 20)),
-                        const SizedBox(height: 10),
-                        ProjectCard(
-                          title: 'Flutter Development',
-                          description:
-                          'I’m developing android,ios and web applications using flutter platform.',
-                          width: width,
-                          ratio: 0.35,
-                        ),
-                        const SizedBox(height: 10),
-                        ProjectCard(
-                          title: 'Backend Development',
-                          description:
-                          'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
-                          width: width,
-                          ratio: 0.35,
-                        ),
-                        const SizedBox(height: 10),
-                        ProjectCard(
-                            title: 'Python Development',
-                            description:
-                            'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
-                            width: width,
-                            ratio: 0.35),
-                      ],
-                    ),
+                    InkWell(
+                      onTap: () async => !await launch(
+                          'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
+                      child: Text("View more and recent in github",
+                          style: GoogleFonts.getFont('Delius',
+                              decoration: TextDecoration.underline,
+                              color: CustomColors.primary,
+                              fontSize: 16)),
+                    )
                   ],
                 );
               } else {
@@ -116,36 +131,29 @@ class LowerContainer extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SkillCard(
+                        ProjectCard(
                             title: 'Flutter Development',
+                            description:
+                                'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
                             width: 2 * width,
                             ratio: 0.45),
                         const SizedBox(height: 10),
-                        SkillCard(
+                        ProjectCard(
                             title: 'Backend Development',
+                            description:
+                                'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
                             width: 2 * width,
                             ratio: 0.45),
                         const SizedBox(height: 10),
-                        SkillCard(
+                        ProjectCard(
                             title: 'Python Development',
+                            description:
+                                'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
                             width: 2 * width,
                             ratio: 0.45),
                       ],
                     ),
                     // hello with bio and info
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        HelloWithBio(width: 3 * width,ratio: 0.3,),
-                        const SizedBox(
-                          height: 35,
-                        ),
-                        Info(width: 3 * width,ratio:0.3),
-                      ],
-                    )
                   ],
                 );
               }
@@ -155,7 +163,8 @@ class LowerContainer extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.centerLeft,
-              margin: EdgeInsets.only(left:width>=Breakpoints.lg? width * 0.1:width * 0.05),
+              margin: EdgeInsets.only(
+                  left: width >= Breakpoints.lg ? width * 0.1 : width * 0.05),
               child: Text('Some of my intrests',
                   style: GoogleFonts.getFont('Delius',
                       color: Colors.white, fontSize: 19)),
@@ -229,8 +238,7 @@ class LowerContainer extends StatelessWidget {
                 );
               }
             }),
-            const SizedBox(height:10)
-        
+            const SizedBox(height: 10)
           ],
         ));
   }
