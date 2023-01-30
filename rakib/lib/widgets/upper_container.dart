@@ -46,6 +46,8 @@ class UpperContainer extends StatelessWidget {
               SizedBox(width: width * 0.07),
               KhalidImage(width: (2 * width) - 0.16 * width),
               SizedBox(height: 0.05 * width),
+              HelloWithBio(width: 0.45 * width,ratio: 1,),
+              SizedBox(height: 0.05 * width),
               Description(
                 isVertical: true,
                 width: width,
@@ -58,6 +60,8 @@ class UpperContainer extends StatelessWidget {
             children: [
               SizedBox(width: width * 0.07),
               Center(child: KhalidImage(width: 2 * width)),
+              SizedBox(height: 0.05 * width),
+              HelloWithBio(width: 0.45 * width,ratio: 1,),
               SizedBox(height: 0.05 * width),
               Description(isVertical: true, width: width),
             ],

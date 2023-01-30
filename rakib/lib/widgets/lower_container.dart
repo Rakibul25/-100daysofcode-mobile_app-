@@ -18,12 +18,11 @@ class LowerContainer extends StatelessWidget {
   final GlobalKey intrestsKey;
   final GlobalKey skillsKey;
 
-  const LowerContainer(
-      {Key? key,
-      required this.width,
-      required this.intrests,
-      required this.intrestsKey,
-      required this.skillsKey})
+  const LowerContainer({Key? key,
+    required this.width,
+    required this.intrests,
+    required this.intrestsKey,
+    required this.skillsKey})
       : super(key: key);
 
   @override
@@ -55,25 +54,28 @@ class LowerContainer extends StatelessWidget {
                           children: [
                             const SizedBox(height: 10),
                             ProjectCard(
-                              title: 'Flutter Development',
+                              title: 'HomeRent-(Flutter Project)',
                               description:
-                                  'I’m developing android,ios and web applications using flutter platform.',
+                              'This is a home rent or buying system. Where someone can find a home based on location and sorting price, size.',
+                              link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/homerent',
                               width: width,
                               ratio: 0.35,
                             ),
                             const SizedBox(height: 10),
                             ProjectCard(
-                              title: 'Backend Development',
+                              title: 'BankApp-(Flutter Project)',
                               description:
-                                  'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                              'This is a home rent or buying system. Where someone can find home based on location and sorting price, size.',
+                              link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/bank',
                               width: width,
                               ratio: 0.35,
                             ),
                             const SizedBox(height: 10),
                             ProjectCard(
-                                title: 'Python Development',
+                                title: 'ShareCare(A ride sharing app-Final year project)',
                                 description:
-                                    'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                                'It was my final year project. There was colossal research and analysis before designing this. We designed a ride-sharing app which will reduce the transportation cost of city traffic jam. For details of this project CLICK here.',
+                                link: 'https://github.com/Rakibul25/ShareCare',
                                 width: width,
                                 ratio: 0.35),
                           ],
@@ -86,25 +88,28 @@ class LowerContainer extends StatelessWidget {
                           children: [
                             const SizedBox(height: 10),
                             ProjectCard(
-                              title: 'Flutter Development',
+                              title: 'Course Content Management(Android Java lab project with firebase)',
                               description:
-                                  'I’m developing android,ios and web applications using flutter platform.',
+                              'This project is for my university android development course. The idea is to make an application where a teacher can upload class content. ',
+                              link: 'https://github.com/Rakibul25/Android-lab-project',
                               width: width,
                               ratio: 0.35,
                             ),
                             const SizedBox(height: 10),
                             ProjectCard(
-                              title: 'Backend Development',
+                              title: 'Portfolio(1) with flutter',
                               description:
-                                  'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                              'Personal practice project, it was a portfolio website with flutter web',
+                              link: 'https://github.com/Rakibul25/myPortfolio',
                               width: width,
                               ratio: 0.35,
                             ),
                             const SizedBox(height: 10),
                             ProjectCard(
-                                title: 'Python Development',
+                                title: 'Portfolio(1) with flutter',
                                 description:
-                                    'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                                'Personal practice project, it was a portfolio website with flutter web',
+                                link: 'https://github.com/Rakibul25/myPortfolio',
                                 width: width,
                                 ratio: 0.35),
 
@@ -112,8 +117,10 @@ class LowerContainer extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
                     InkWell(
-                      onTap: () async => !await launch(
+                      onTap: () async =>
+                      !await launch(
                           'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
                       child: Text("View more and recent in github",
                           style: GoogleFonts.getFont('Delius',
@@ -125,32 +132,70 @@ class LowerContainer extends StatelessWidget {
                 );
               } else {
                 return Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // skills cards
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         ProjectCard(
-                            title: 'Flutter Development',
+                            title: 'HomeRent-(Flutter Project)',
                             description:
-                                'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                            'This is a home rent or buying system. Where someone can find a home based on location and sorting price, size.',
+                            link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/homerent',
                             width: 2 * width,
                             ratio: 0.45),
                         const SizedBox(height: 10),
                         ProjectCard(
-                            title: 'Backend Development',
+                            title: 'BankApp-(Flutter Project)',
                             description:
-                                'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                            'This is a home rent or buying system. Where someone can find home based on location and sorting price, size.',
+                            link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/bank',
                             width: 2 * width,
                             ratio: 0.45),
                         const SizedBox(height: 10),
                         ProjectCard(
-                            title: 'Python Development',
+                            title: 'ShareCare(A ride sharing app-Final year project)',
                             description:
-                                'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                            'It was my final year project. There was colossal research and analysis before designing this. We designed a ride-sharing app which will reduce the transportation cost of city traffic jam. For details of this project CLICK here.',
+                            link: 'https://github.com/Rakibul25/ShareCare',
                             width: 2 * width,
                             ratio: 0.45),
+                        const SizedBox(height: 10),
+                        ProjectCard(
+                            title: 'Course Content Management(Android Java lab project with firebase)',
+                            description:
+                            'This project is for my university android development course. The idea is to make an application where a teacher can upload class content. ',
+                            link: 'https://github.com/Rakibul25/Android-lab-project',
+                            width: 2 * width,
+                            ratio: 0.45),
+                        const SizedBox(height: 10),
+                        ProjectCard(
+                            title: 'CareerBuilder-Web Project',
+                            description:
+                            'A web project for lab, this project was made with html and css. Php and mysql was for backend.',
+                            link: 'https://github.com/Rakibul25/web-app-uni-course-',
+                            width: 2 * width,
+                            ratio: 0.45),
+                        const SizedBox(height: 10),
+                        ProjectCard(
+                            title: 'Portfolio(1) with flutter',
+                            description:
+                            'Personal practice project, it was a portfolio website with flutter web',
+                            link: 'https://github.com/Rakibul25/myPortfolio',
+                            width: 2 * width,
+                            ratio: 0.45),
+                        const SizedBox(height: 10),
+                        InkWell(
+                          onTap: () async =>
+                          !await launch(
+                              'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
+                          child: Text("View more and recent in github",
+                              style: GoogleFonts.getFont('Delius',
+                                  decoration: TextDecoration.underline,
+                                  color: CustomColors.primary,
+                                  fontSize: 16)),
+                        )
                       ],
                     ),
                     // hello with bio and info
@@ -179,14 +224,15 @@ class LowerContainer extends StatelessWidget {
                   child: StaggeredGridView.countBuilder(
                     crossAxisCount: 6,
                     itemCount: 6,
-                    itemBuilder: (BuildContext context, int index) => Intrest(
-                      intrest: intrests[index]['intrest'],
-                      color: intrests[index]['color'],
-                      textColor: intrests[index]['textColor'],
-                      key: index == 4 ? intrestsKey : null,
-                    ),
+                    itemBuilder: (BuildContext context, int index) =>
+                        Intrest(
+                          intrest: intrests[index]['intrest'],
+                          color: intrests[index]['color'],
+                          textColor: intrests[index]['textColor'],
+                          key: index == 4 ? intrestsKey : null,
+                        ),
                     staggeredTileBuilder: (int index) =>
-                        const StaggeredTile.fit(
+                    const StaggeredTile.fit(
                       2,
                     ),
                     mainAxisSpacing: 10.0,
@@ -201,14 +247,15 @@ class LowerContainer extends StatelessWidget {
                   child: StaggeredGridView.countBuilder(
                     crossAxisCount: 6,
                     itemCount: 6,
-                    itemBuilder: (BuildContext context, int index) => Intrest(
-                      intrest: intrests[index]['intrest'],
-                      color: intrests[index]['color'],
-                      textColor: intrests[index]['textColor'],
-                      key: index == 4 ? intrestsKey : null,
-                    ),
+                    itemBuilder: (BuildContext context, int index) =>
+                        Intrest(
+                          intrest: intrests[index]['intrest'],
+                          color: intrests[index]['color'],
+                          textColor: intrests[index]['textColor'],
+                          key: index == 4 ? intrestsKey : null,
+                        ),
                     staggeredTileBuilder: (int index) =>
-                        const StaggeredTile.fit(
+                    const StaggeredTile.fit(
                       4,
                     ),
                     mainAxisSpacing: 10.0,
@@ -222,14 +269,15 @@ class LowerContainer extends StatelessWidget {
                   child: StaggeredGridView.countBuilder(
                     crossAxisCount: 6,
                     itemCount: 6,
-                    itemBuilder: (BuildContext context, int index) => Intrest(
-                      intrest: intrests[index]['intrest'],
-                      color: intrests[index]['color'],
-                      textColor: intrests[index]['textColor'],
-                      key: index == 4 ? intrestsKey : null,
-                    ),
+                    itemBuilder: (BuildContext context, int index) =>
+                        Intrest(
+                          intrest: intrests[index]['intrest'],
+                          color: intrests[index]['color'],
+                          textColor: intrests[index]['textColor'],
+                          key: index == 4 ? intrestsKey : null,
+                        ),
                     staggeredTileBuilder: (int index) =>
-                        const StaggeredTile.fit(
+                    const StaggeredTile.fit(
                       6,
                     ),
                     mainAxisSpacing: 10.0,

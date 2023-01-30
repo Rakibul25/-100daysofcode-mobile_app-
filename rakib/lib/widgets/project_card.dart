@@ -8,12 +8,14 @@ import '../utils/custom_colors.dart';
 class ProjectCard extends StatelessWidget {
   final String title;
   final String description;
+  final String link;
   final double width;
   final double ratio;
 
   const ProjectCard(
       {required this.title,
       required this.description,
+      required this.link,
       required this.width,
       required this.ratio,
       Key? key})
@@ -44,8 +46,7 @@ class ProjectCard extends StatelessWidget {
                           color: CustomColors.gray, fontSize: 12)),
                   const SizedBox(height: 10),
                   InkWell(
-                    onTap: () async => !await launch(
-                        'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
+                    onTap: () async => !await launch(link),
                     child: Text("View in github",
                         style: GoogleFonts.getFont('Delius',
                             decoration: TextDecoration.underline,
