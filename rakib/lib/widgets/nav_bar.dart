@@ -38,18 +38,9 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget navBarRow = Stack(children: [
-      Padding(
-        padding: EdgeInsets.only(left: width * 0.04),
-        child: Logo(width: width,scrollController: scrollController,),
-      ),
       Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            NavBarItem(
-              text: 'Home',
-              onTap: () {},
-            ),
             NavBarItem(
                 text: 'Skills', onTap: () => scrollToWidgetByKey(skillsKey)),
             NavBarItem(

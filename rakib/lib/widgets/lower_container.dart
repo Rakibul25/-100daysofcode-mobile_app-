@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rakib/widgets/project_card.dart';
 import 'package:rakib/widgets/skill_card.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../utils/breakpoints.dart';
@@ -34,7 +35,7 @@ class LowerContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
             LayoutBuilder(builder: (context, constraints) {
               if (constraints.maxWidth >= Breakpoints.lg) {
                 return Row(
@@ -42,50 +43,69 @@ class LowerContainer extends StatelessWidget {
                   children: [
                     // skills cards
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        Text("Skills",
+                            style: GoogleFonts.getFont('Delius',
+                                decoration: TextDecoration.underline,
+                                color: CustomColors.primary,
+                                fontSize: 20)),
+                        const SizedBox(height: 10),
                         SkillCard(
                           title: 'Flutter Development',
-                          description:
-                              'I’m developing android,ios and web applications using flutter platform.',
-                          icon: ImageAssetConstants.flutter,
                           width: width,
-                          ratio: 0.35,
+                          ratio: 0.15,
                         ),
                         const SizedBox(height: 10),
                         SkillCard(
                           title: 'Backend Development',
-                          description:
-                              'I’m developing backend applications using codnuit and spring boot with a good knowledge in nodejs.',
-                          icon: ImageAssetConstants.backendIcon,
                           width: width,
-                          ratio: 0.35,
+                          ratio: 0.15,
                         ),
                         const SizedBox(height: 10),
                         SkillCard(
                             title: 'Python Development',
-                            description:
-                                'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
-                            icon: ImageAssetConstants.python,
                             width: width,
-                            ratio: 0.35),
+                            ratio: 0.15),
                       ],
                     ),
                     SizedBox(width: 0.05 * width),
                     // hello with bio and info
                     Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        HelloWithBio(
-                          ratio:0.4 ,
+                        Text("projects",
+                            style: GoogleFonts.getFont('Delius',
+                                decoration: TextDecoration.underline,
+                                color: CustomColors.primary,
+                                fontSize: 20)),
+                        const SizedBox(height: 10),
+                        ProjectCard(
+                          title: 'Flutter Development',
+                          description:
+                          'I’m developing android,ios and web applications using flutter platform.',
                           width: width,
+                          ratio: 0.35,
                         ),
-                        const SizedBox(
-                          height: 30,
+                        const SizedBox(height: 10),
+                        ProjectCard(
+                          title: 'Backend Development',
+                          description:
+                          'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                          width: width,
+                          ratio: 0.35,
                         ),
-                        Info(width: width,ratio:0.4)
+                        const SizedBox(height: 10),
+                        ProjectCard(
+                            title: 'Python Development',
+                            description:
+                            'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
+                            width: width,
+                            ratio: 0.35),
                       ],
-                    )
+                    ),
                   ],
                 );
               } else {
@@ -98,25 +118,16 @@ class LowerContainer extends StatelessWidget {
                       children: [
                         SkillCard(
                             title: 'Flutter Development',
-                            description:
-                                'I’m developing android,ios and web applications using flutter platform.',
-                            icon: ImageAssetConstants.flutter,
                             width: 2 * width,
                             ratio: 0.45),
                         const SizedBox(height: 10),
                         SkillCard(
                             title: 'Backend Development',
-                            description:
-                                'I’m developing backend applications using codnuit and spring boot with a good knowledge in nodejs.',
-                            icon: ImageAssetConstants.backendIcon,
                             width: 2 * width,
                             ratio: 0.45),
                         const SizedBox(height: 10),
                         SkillCard(
                             title: 'Python Development',
-                            description:
-                                'I’m developing maching learing and deep learning projects using standard python libraries and tensorflow api.',
-                            icon: ImageAssetConstants.python,
                             width: 2 * width,
                             ratio: 0.45),
                       ],

@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
 
-
-class SkillCard extends StatelessWidget {
+class ProjectCard extends StatelessWidget {
   final String title;
+  final String description;
   final double width;
   final double ratio;
-  const SkillCard(
+
+  const ProjectCard(
       {required this.title,
+      required this.description,
       required this.width,
       required this.ratio,
       Key? key})
@@ -34,9 +37,12 @@ class SkillCard extends StatelessWidget {
                 children: [
                   Text(title,
                       style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.primary,
-                          fontSize: 12)),
+                          color: CustomColors.primary, fontSize: 16)),
                   const SizedBox(height: 10),
+                  Text(description,
+                      style: GoogleFonts.getFont('Delius',
+                          color: CustomColors.gray, fontSize: 12)),
+
 
                 ],
               ),

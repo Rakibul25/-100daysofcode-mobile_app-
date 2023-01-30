@@ -27,9 +27,8 @@ class UpperContainer extends StatelessWidget {
               const SizedBox(width: 20),
               HelloWithBio(width: 0.45 * width,ratio: 0.5,),
               const SizedBox(
-                height: 35,
+                width: 10,
               ),
-              const SizedBox(width: 30),
               KhalidImage(
                 width: width,
               ),

@@ -22,7 +22,7 @@ class Description extends StatelessWidget {
         children: [
           SizedBox(
             width: isVertical ? double.infinity : width * 0.29,
-            height: 90,
+            height: 30,
             child: AnimatedTextKit(
               repeatForever: true,
               pause: const Duration(seconds: 2),
