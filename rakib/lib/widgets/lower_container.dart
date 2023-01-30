@@ -7,9 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
 import '../utils/image_asset_constants.dart';
-import 'hello_with_bio.dart';
-import 'info.dart';
-import 'intrest.dart';
+import 'interest.dart';
 
 class LowerContainer extends StatelessWidget {
   final double width;
@@ -93,10 +91,10 @@ class LowerContainer extends StatelessWidget {
                             ),
                             const SizedBox(height: 10),
                             ProjectCard(
-                              title: 'Portfolio(1) with flutter',
+                              title: 'CareerBuilder-Web Project',
                               description:
-                              'Personal practice project, it was a portfolio website with flutter web',
-                              link: 'https://github.com/Rakibul25/myPortfolio',
+                              'A web project for lab, this project was made with html and css. Php and mysql was for backend.',
+                              link: 'https://github.com/Rakibul25/web-app-uni-course-',
                               width: width,
                               ratio: 0.35,
                             ),

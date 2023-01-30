@@ -4,8 +4,7 @@ import 'package:rakib/widgets/rakib_avatar_image.dart';
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
 import 'description.dart';
-import 'hello_with_bio.dart';
-import 'info.dart';
+import 'hello.dart';
 
 
 class UpperContainer extends StatelessWidget {
