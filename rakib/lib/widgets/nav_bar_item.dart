@@ -27,7 +27,7 @@ class NavBarItem extends StatelessWidget {
           onTap: () => onTap(),
           child: Container(
             height: 40.0,
-            width: 50,
+            width: 70,
             alignment: Alignment.center,
             margin: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Column(

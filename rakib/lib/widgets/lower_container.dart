@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rakib/widgets/project_card.dart';
-import 'package:rakib/widgets/skill_card.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../utils/breakpoints.dart';
@@ -16,20 +15,18 @@ class LowerContainer extends StatelessWidget {
   final double width;
   final List<Map> intrests;
   final GlobalKey intrestsKey;
-  final GlobalKey skillsKey;
 
   const LowerContainer({Key? key,
     required this.width,
     required this.intrests,
     required this.intrestsKey,
-    required this.skillsKey})
+   })
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
         width: width,
-        key: skillsKey,
         color: CustomColors.darkBackground,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,7 +38,6 @@ class LowerContainer extends StatelessWidget {
                   children: [
                     Text("Projects",
                         style: GoogleFonts.getFont('Delius',
-                            decoration: TextDecoration.underline,
                             color: CustomColors.primary,
                             fontSize: 20)),
                     Row(
@@ -121,8 +117,8 @@ class LowerContainer extends StatelessWidget {
                     InkWell(
                       onTap: () async =>
                       !await launch(
-                          'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
-                      child: Text("View more and recent in github",
+                          'https://github.com/Rakibul25?tab=repositories'),
+                      child: Text("View more and recent projects in github",
                           style: GoogleFonts.getFont('Delius',
                               decoration: TextDecoration.underline,
                               color: CustomColors.primary,
@@ -135,6 +131,11 @@ class LowerContainer extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // skills cards
+                    Text("Projects",
+                        style: GoogleFonts.getFont('Delius',
+                            color: CustomColors.primary,
+                            fontSize: 20)),
+                    const SizedBox(height: 10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -189,8 +190,8 @@ class LowerContainer extends StatelessWidget {
                         InkWell(
                           onTap: () async =>
                           !await launch(
-                              'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
-                          child: Text("View more and recent in github",
+                              'https://github.com/Rakibul25?tab=repositories'),
+                          child: Text("View more and recent projects in github",
                               style: GoogleFonts.getFont('Delius',
                                   decoration: TextDecoration.underline,
                                   color: CustomColors.primary,
@@ -207,86 +208,107 @@ class LowerContainer extends StatelessWidget {
               height: width * 0.07,
             ),
             Container(
-              alignment: Alignment.centerLeft,
-              margin: EdgeInsets.only(
-                  left: width >= Breakpoints.lg ? width * 0.1 : width * 0.05),
-              child: Text('Some of my intrests',
-                  style: GoogleFonts.getFont('Delius',
-                      color: Colors.white, fontSize: 19)),
-            ),
-            SizedBox(height: width * 0.03),
-            // 820
-            LayoutBuilder(builder: (context, constraints) {
-              if (constraints.maxWidth >= Breakpoints.lg) {
-                return SizedBox(
-                  width: width * 0.76,
-                  height: 100,
-                  child: StaggeredGridView.countBuilder(
-                    crossAxisCount: 6,
-                    itemCount: 6,
-                    itemBuilder: (BuildContext context, int index) =>
-                        Intrest(
-                          intrest: intrests[index]['intrest'],
-                          color: intrests[index]['color'],
-                          textColor: intrests[index]['textColor'],
-                          key: index == 4 ? intrestsKey : null,
-                        ),
-                    staggeredTileBuilder: (int index) =>
-                    const StaggeredTile.fit(
-                      2,
+              color: CustomColors.brightBackground,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Column(
+                  children: [
+                    Center(
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text('Intrests',
+                            style: GoogleFonts.getFont('Delius',
+                                color: CustomColors.primary, fontSize: 19)),
+                      ),
                     ),
-                    mainAxisSpacing: 10.0,
-                    crossAxisSpacing: 40.0,
-                  ),
-                );
-              } else if (constraints.maxWidth < Breakpoints.lg &&
-                  constraints.maxWidth >= Breakpoints.sm) {
-                return SizedBox(
-                  width: width * 0.76,
-                  height: 180,
-                  child: StaggeredGridView.countBuilder(
-                    crossAxisCount: 6,
-                    itemCount: 6,
-                    itemBuilder: (BuildContext context, int index) =>
-                        Intrest(
-                          intrest: intrests[index]['intrest'],
-                          color: intrests[index]['color'],
-                          textColor: intrests[index]['textColor'],
-                          key: index == 4 ? intrestsKey : null,
-                        ),
-                    staggeredTileBuilder: (int index) =>
-                    const StaggeredTile.fit(
-                      4,
+                    SizedBox(height: width * 0.03),
+                    // 820
+                    Center(
+                      child: LayoutBuilder(builder: (context, constraints) {
+                        if (constraints.maxWidth >= Breakpoints.lg) {
+                          return SizedBox(
+                            width: width * 0.46,
+                            height: 100,
+                            child: StaggeredGridView.countBuilder(
+                              crossAxisCount: 5,
+                              itemCount: 5,
+                              itemBuilder: (BuildContext context, int index) =>
+                                  Intrest(
+                                    intrest: intrests[index]['intrest'],
+                                    color: intrests[index]['color'],
+                                    textColor: intrests[index]['textColor'],
+                                    key: index == 4 ? intrestsKey : null,
+                                  ),
+                              staggeredTileBuilder: (int index) =>
+                              const StaggeredTile.fit(
+                                2,
+                              ),
+                              mainAxisSpacing: 10.0,
+                              crossAxisSpacing: 40.0,
+                            ),
+                          );
+                        } else if (constraints.maxWidth < Breakpoints.lg &&
+                            constraints.maxWidth >= Breakpoints.sm) {
+                          return Center(
+                            child: SizedBox(
+                              width: width * 0.76,
+                              height: 180,
+                              child: Center(
+                                child: StaggeredGridView.countBuilder(
+                                  crossAxisCount: 5,
+                                  itemCount: 5,
+                                  itemBuilder: (BuildContext context, int index) =>
+                                      Intrest(
+                                        intrest: intrests[index]['intrest'],
+                                        color: intrests[index]['color'],
+                                        textColor: intrests[index]['textColor'],
+                                        key: index == 4 ? intrestsKey : null,
+                                      ),
+                                  staggeredTileBuilder: (int index) =>
+                                  const StaggeredTile.fit(
+                                    5,
+                                  ),
+                                  mainAxisSpacing: 10.0,
+                                  crossAxisSpacing: 40.0,
+                                ),
+                              ),
+                            ),
+                          );
+                        } else {
+                          return Center(
+                            child: SizedBox(
+                              width: width * 0.76,
+                              height: 360,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: StaggeredGridView.countBuilder(
+                                  crossAxisCount: 5,
+                                  itemCount: 5,
+                                  itemBuilder: (BuildContext context, int index) =>
+                                      Intrest(
+                                        intrest: intrests[index]['intrest'],
+                                        color: intrests[index]['color'],
+                                        textColor: intrests[index]['textColor'],
+                                        key: index == 5 ? intrestsKey : null,
+                                      ),
+                                  staggeredTileBuilder: (int index) =>
+                                  const StaggeredTile.fit(
+                                    4,
+                                  ),
+                                  mainAxisSpacing: 10.0,
+                                  crossAxisSpacing: 40.0,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                      }),
                     ),
-                    mainAxisSpacing: 10.0,
-                    crossAxisSpacing: 40.0,
-                  ),
-                );
-              } else {
-                return SizedBox(
-                  width: width * 0.76,
-                  height: 360,
-                  child: StaggeredGridView.countBuilder(
-                    crossAxisCount: 6,
-                    itemCount: 6,
-                    itemBuilder: (BuildContext context, int index) =>
-                        Intrest(
-                          intrest: intrests[index]['intrest'],
-                          color: intrests[index]['color'],
-                          textColor: intrests[index]['textColor'],
-                          key: index == 4 ? intrestsKey : null,
-                        ),
-                    staggeredTileBuilder: (int index) =>
-                    const StaggeredTile.fit(
-                      6,
-                    ),
-                    mainAxisSpacing: 10.0,
-                    crossAxisSpacing: 40.0,
-                  ),
-                );
-              }
-            }),
-            const SizedBox(height: 10)
+                    const SizedBox(height: 50)
+                  ],
+                ),
+              ),
+            )
           ],
         ));
   }

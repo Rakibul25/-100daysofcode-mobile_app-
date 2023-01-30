@@ -32,7 +32,7 @@ class HelloWithBio extends StatelessWidget {
           ),
           InkWell(
             onTap: () async => !await launch(
-                'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
+                'https://drive.google.com/drive/folders/11CBADlaI-XRwVrPcwRNIt_NYBxaxIRjN?usp=sharing'),
             child: Text("download my resume!",
                 style: GoogleFonts.getFont('Delius',
                     decoration: TextDecoration.underline,

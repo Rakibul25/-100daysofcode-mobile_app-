@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
-import 'logo.dart';
 
 
 class Footer extends StatelessWidget {

@@ -19,7 +19,6 @@ class Portfolio extends StatefulWidget {
 class _PortfolioState extends State<Portfolio> {
   late final List<Map> intrests;
   late final GlobalKey intrestsKey;
-  late final GlobalKey skillsKey;
   late final GlobalKey homeKey;
   late final ScrollController scrollController;
   late final RxBool showFloatingButton;
@@ -27,42 +26,36 @@ class _PortfolioState extends State<Portfolio> {
   @override
   void initState() {
     intrestsKey = GlobalKey();
-    skillsKey = GlobalKey();
     homeKey = GlobalKey();
     scrollController = ScrollController();
     showFloatingButton = false.obs;
 
     intrests = [
       {
+        'intrest': 'Coding',
+        'color': CustomColors.darkBackground,
+        'textColor': CustomColors.primary,
+      },
+      {
+        'intrest': 'Photography',
+        'color': CustomColors.darkBackground,
+        'textColor': CustomColors.primary,
+      },
+      {
         'intrest': 'Writing',
-        'color': CustomColors.primary,
-        'textColor': CustomColors.darkBackground,
+        'color': CustomColors.darkBackground,
+        'textColor': CustomColors.primary,
       },
       {
         'intrest': 'Travelling',
-        'color': CustomColors.brightBackground,
+        'color': CustomColors.darkBackground,
         'textColor': CustomColors.primary,
       },
       {
         'intrest': 'Reading',
-        'color': CustomColors.primary,
-        'textColor': CustomColors.darkBackground,
-      },
-      {
-        'intrest': 'Photography',
-        'color': CustomColors.brightBackground,
+        'color': CustomColors.darkBackground,
         'textColor': CustomColors.primary,
-      },
-      {
-        'intrest': 'Math',
-        'color': CustomColors.primary,
-        'textColor': CustomColors.darkBackground,
-      },
-      {
-        'intrest': 'Solving Problems',
-        'color': CustomColors.primary,
-        'textColor': CustomColors.darkBackground,
-      },
+      }
     ];
 
     scrollController.addListener(() {
@@ -83,18 +76,21 @@ class _PortfolioState extends State<Portfolio> {
       floatingActionButton: ObxValue<RxBool>(
               (data) => Visibility(
             visible: data.value,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FloatingActionButton(
-                    onPressed: () => scrollController.animateTo(
-                        scrollController.position.minScrollExtent,
-                        duration: const Duration(milliseconds: 700),
-                        curve: Curves.fastOutSlowIn),
-                    backgroundColor: CustomColors.primary,
-                    child: const Icon(Icons.arrow_upward,
-                        color: CustomColors.darkBackground)),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  FloatingActionButton(
+                      onPressed: () => scrollController.animateTo(
+                          scrollController.position.minScrollExtent,
+                          duration: const Duration(milliseconds: 700),
+                          curve: Curves.fastOutSlowIn),
+                      backgroundColor: Colors.white,
+                      child: const Icon(Icons.arrow_upward,
+                          color: CustomColors.brightBackground)),
+                ],
+              ),
             ),
           ),
           showFloatingButton),
@@ -113,7 +109,7 @@ class _PortfolioState extends State<Portfolio> {
                       width: width,
                       intrests: intrests,
                       intrestsKey: intrestsKey,
-                      skillsKey: skillsKey),
+                      ),
                   Container(
                     width: width,
                     height: 0.1,
@@ -124,8 +120,6 @@ class _PortfolioState extends State<Portfolio> {
               ),
               NavBar(
                 width: width,
-                skillsKey: skillsKey,
-                intrestsKey: intrestsKey,
                 key: homeKey,
                 scrollController: scrollController,
               ),

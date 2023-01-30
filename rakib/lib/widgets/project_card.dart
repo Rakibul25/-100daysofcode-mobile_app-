@@ -42,8 +42,8 @@ class ProjectCard extends StatelessWidget {
                           color: CustomColors.primary, fontSize: 16)),
                   const SizedBox(height: 10),
                   Text(description,
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray, fontSize: 12)),
+                      style: GoogleFonts.lato(fontStyle: FontStyle.italic,
+                          color: CustomColors.gray, fontSize: 14)),
                   const SizedBox(height: 10),
                   InkWell(
                     onTap: () async => !await launch(link),

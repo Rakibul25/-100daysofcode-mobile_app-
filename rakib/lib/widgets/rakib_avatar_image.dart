@@ -4,9 +4,9 @@ import '../utils/custom_colors.dart';
 import '../utils/image_asset_constants.dart';
 
 
-class KhalidImage extends StatelessWidget {
+class RakibAvatar extends StatelessWidget {
   final double width;
-  const KhalidImage({
+  const RakibAvatar({
     required this.width,
     Key? key,
   }) : super(key: key);

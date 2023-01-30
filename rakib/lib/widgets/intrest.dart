@@ -17,7 +17,7 @@ class Intrest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 170,
+      width: 80,
       padding: const EdgeInsets.symmetric(vertical: 7),
       decoration: BoxDecoration(
           color: color,

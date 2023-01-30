@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:rakib/widgets/rakib_avatar_image.dart';
 
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
 import 'description.dart';
 import 'hello_with_bio.dart';
 import 'info.dart';
-import 'khalid_image.dart';
 
 
 class UpperContainer extends StatelessWidget {
@@ -29,7 +29,7 @@ class UpperContainer extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              KhalidImage(
+              RakibAvatar(
                 width: width,
               ),
               Description(
@@ -44,9 +44,9 @@ class UpperContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(width: width * 0.07),
-              KhalidImage(width: (2 * width) - 0.16 * width),
+              RakibAvatar(width: (2 * width) - 0.16 * width),
               SizedBox(height: 0.05 * width),
-              HelloWithBio(width: 0.45 * width,ratio: 1,),
+              HelloWithBio(width: 0.65 * width,ratio: 1,),
               SizedBox(height: 0.05 * width),
               Description(
                 isVertical: true,
@@ -59,7 +59,7 @@ class UpperContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(width: width * 0.07),
-              Center(child: KhalidImage(width: 2 * width)),
+              Center(child: RakibAvatar(width: 2 * width)),
               SizedBox(height: 0.05 * width),
               HelloWithBio(width: 0.45 * width,ratio: 1,),
               SizedBox(height: 0.05 * width),

@@ -3,6 +3,7 @@ class ImageAssetConstants{
   static const String github='assets/images/github.png';
   static const String facebook='assets/images/facebook.png';
   static const String linkedIn='assets/images/linkedIn.png';
+  static const String instagram='assets/images/instagram.png';
   static const String flutter='assets/images/flutter.png';
   static const String flutterCircle='assets/images/flutter_circle.png';
   static const String javaCircle='assets/images/java_circle.png';
