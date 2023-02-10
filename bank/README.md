@@ -12,8 +12,19 @@ This was a basic bank app, subsequently, I added advanced features like shared_p
 
 
 # Screenshots
-<img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/splash.jpg" width="220" height="430">
-<img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/login.jpg" width="220" height="430">
-<img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/home.jpg" width="220" height="430">
+
+<table>
+  <tr>
+    <td>splash</td>
+     <td>Single time login</td>
+     <td>Home</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/splash.jpg" width="220" height="430"></td>
+    <td><img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/login.jpg" width="220" height="430"></td>
+    <td><img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/home.jpg" width="220" height="430"></td>
+  </tr>
+ </table>
+
 
 Thank You :) ☕
