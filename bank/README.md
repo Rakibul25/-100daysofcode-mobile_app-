@@ -1,16 +1,19 @@
-# bank
+# Introduction
+This was a basic bank app, subsequently, I added advanced features like shared_preferences and figured out how to prevent repeated logins by saving login information in shared preferences.
 
-A new Flutter project.
+# Feature List
+- single-time login If you don't remove your app's cache or log out, there's no need to log in again.
+- Account information.
 
-## Getting Started
+# Developed Using
+- Flutter
+# Package
+- shared_preferences
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Screenshots
+<img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/splash.jpg" width="220" height="430">
+<img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/login.jpg" width="220" height="430">
+<img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/bank/screenshots/home.jpg" width="220" height="430">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Thank You :) ☕
