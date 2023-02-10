@@ -11,7 +11,18 @@ This is a home rent application, focused on frontend. This will show all availab
 - Flutter
 
 # Screenshots
-<img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/homerent/screenshots/home.jpg" width="220" height="430">
-<img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/homerent/screenshots/details.jpg" width="220" height="430">
+
+<table>
+  <tr>
+    <td>Home</td>
+     <td>Details</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/homerent/screenshots/home.jpg" width="220" height="430"></td>
+    <td><img src="https://github.com/Rakibul25/-100daysofcode-mobile_app-/blob/100days/homerent/screenshots/details.jpg" width="220" height="430"></td>
+  </tr>
+ </table>
+
+
 
 Thank You :) ☕
