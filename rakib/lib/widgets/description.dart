@@ -18,28 +18,29 @@ class Description extends StatelessWidget {
       width: isVertical ? double.infinity : width * 0.29,
       child: Column(
         crossAxisAlignment:
-            isVertical ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+            isVertical ? CrossAxisAlignment.center : CrossAxisAlignment.center,
         children: [
           SizedBox(
             width: isVertical ? double.infinity : width * 0.29,
             height: 30,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Developing",textAlign: isVertical ? TextAlign.center : TextAlign.start, style: GoogleFonts.getFont('Delius',color: CustomColors.gray,fontSize: 15)),
+                Text("Developing",textAlign: isVertical ? TextAlign.center : TextAlign.center, style: GoogleFonts.getFont('Delius',color: CustomColors.gray,fontSize: 22)),
                 AnimatedTextKit(
                   repeatForever: true,
                   pause: const Duration(seconds: 2),
                   animatedTexts: [
                     TyperAnimatedText(
                         " mobile applications",
-                        textAlign: isVertical ? TextAlign.center : TextAlign.start,
+                        textAlign: isVertical ? TextAlign.center : TextAlign.center,
                         textStyle: GoogleFonts.getFont('Delius',
-                            color: CustomColors.gray, fontSize: 15)),
+                            color: CustomColors.gray, fontSize: 22)),
                     TyperAnimatedText(
-                        " Web applications",
-                        textAlign: isVertical ? TextAlign.center : TextAlign.start,
+                        " web applications",
+                        textAlign: isVertical ? TextAlign.center : TextAlign.center,
                         textStyle: GoogleFonts.getFont('Delius',
-                            color: CustomColors.gray, fontSize: 15)),
+                            color: CustomColors.gray, fontSize: 22)),
                   ],
                 ),
               ],

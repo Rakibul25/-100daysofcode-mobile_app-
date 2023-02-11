@@ -36,44 +36,52 @@ class UpperContainer extends StatelessWidget {
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
             alignment: Alignment.center,
-            color: Colors.grey.withOpacity(0.01),
+            color: Colors.grey.withOpacity(0.1),
             child: Column(
               children: [
-                SizedBox(
-                  height: 20,
+                const SizedBox(
+                  height: 5,
                 ),
                 LayoutBuilder(builder: (context, consraints) {
                   if (consraints.maxWidth >= Breakpoints.lg) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(width: 20),
-                        HelloWithBio(
-                          width: 0.45 * width,
-                          ratio: 0.5,
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        RakibAvatar(
-                          width: width,
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        Description(
-                          isVertical: false,
-                          width: width,
-                        ),
-                      ],
+                    return SizedBox(
+                      height: width*.5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(width: 20),
+                              HelloWithBio(
+                                width: 0.45 * width,
+                                ratio: 0.5,
+                              ),
+                              const SizedBox(
+                                width: 40,
+                              ),
+                              RakibAvatar(
+                                width: width,
+                              ),
+                              const SizedBox(
+                                width: 30,
+                              ),
+                              Description(
+                                isVertical: false,
+                                width: width,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     );
                   } else if (consraints.maxWidth < Breakpoints.lg &&
                       consraints.maxWidth >= Breakpoints.md) {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(width: width * 0.07),
-                        RakibAvatar(width: (2 * width) - 0.16 * width),
+                        SizedBox(width: 70),
+                        RakibAvatar(width: width*1.3),
                         SizedBox(height: 0.05 * width),
                         HelloWithBio(
                           width: 0.65 * width,
@@ -83,6 +91,9 @@ class UpperContainer extends StatelessWidget {
                         Description(
                           isVertical: true,
                           width: width,
+                        ),
+                        const SizedBox(
+                          width: 30,
                         ),
                       ],
                     );
@@ -99,6 +110,9 @@ class UpperContainer extends StatelessWidget {
                         ),
                         SizedBox(height: 0.05 * width),
                         Description(isVertical: true, width: width),
+                        const SizedBox(
+                          width: 30,
+                        ),
                       ],
                     );
                   }

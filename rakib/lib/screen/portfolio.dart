@@ -111,6 +111,7 @@ class _PortfolioState extends State<Portfolio> {
                     intrestsKey: intrestsKey,
                     scrollController: scrollController,
                   ),
+                  SizedBox(height: 10,),
                   LowerContainer(
                     width: width,
                     intrests: intrests,
