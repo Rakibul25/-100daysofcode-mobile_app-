@@ -8,7 +8,6 @@ import '../widgets/lower_container.dart';
 import '../widgets/nav_bar.dart';
 import '../widgets/upper_container.dart';
 
-
 class Portfolio extends StatefulWidget {
   const Portfolio({Key? key}) : super(key: key);
 
@@ -72,25 +71,25 @@ class _PortfolioState extends State<Portfolio> {
 
     return Scaffold(
       floatingActionButton: ObxValue<RxBool>(
-              (data) => Visibility(
-            visible: data.value,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 30.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  FloatingActionButton(
-                      onPressed: () => scrollController.animateTo(
-                          scrollController.position.minScrollExtent,
-                          duration: const Duration(milliseconds: 700),
-                          curve: Curves.fastOutSlowIn),
-                      backgroundColor: Colors.white,
-                      child: const Icon(Icons.arrow_upward,
-                          color: CustomColors.brightBackground)),
-                ],
+          (data) => Visibility(
+                visible: data.value,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 30.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      FloatingActionButton(
+                          onPressed: () => scrollController.animateTo(
+                              scrollController.position.minScrollExtent,
+                              duration: const Duration(milliseconds: 700),
+                              curve: Curves.fastOutSlowIn),
+                          backgroundColor: Colors.white,
+                          child: const Icon(Icons.arrow_upward,
+                              color: CustomColors.brightBackground)),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ),
           showFloatingButton),
       body: Container(
         color: CustomColors.brightBackground,
@@ -101,22 +100,33 @@ class _PortfolioState extends State<Portfolio> {
             children: [
               Column(
                 children: [
-
-                  UpperContainer(width: width, intrestsKey: intrestsKey, scrollController: scrollController,),
+                  NavBar(
+                    width: width,
+                    scrollController: scrollController,
+                    intrestsKey: intrestsKey,
+                  ),
+                  SizedBox(height: 10,),
+                  UpperContainer(
+                    width: width,
+                    intrestsKey: intrestsKey,
+                    scrollController: scrollController,
+                  ),
                   LowerContainer(
-                      width: width,
-                      intrests: intrests,
-                      intrestsKey: intrestsKey,
-                      ),
+                    width: width,
+                    intrests: intrests,
+                    intrestsKey: intrestsKey,
+                  ),
                   Container(
                     width: width,
                     height: 0.1,
-                    color:CustomColors.gray,
+                    color: CustomColors.gray,
                   ),
-                  Footer(width: width,scrollController: scrollController,),
+                  Footer(
+                    width: width,
+                    scrollController: scrollController,
+                  ),
                 ],
               ),
-
             ],
           ),
         ),

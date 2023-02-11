@@ -17,11 +17,19 @@ class RakibAvatar extends StatelessWidget {
       alignment: Alignment.centerLeft,
       children: [
         Container(
-          constraints:const BoxConstraints(maxWidth:370),
-          child: Image.asset(
-            ImageAssetConstants.rakib,
-            width: width * 0.29,
-            height: width * 0.3,
+          width: width*.22,
+          height: width*.22,
+          decoration: BoxDecoration(
+            color: const Color(0xff7c94b6),
+            image: const DecorationImage(
+              image: AssetImage(ImageAssetConstants.rakib_sit),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.all( Radius.circular(155.0)),
+            border: Border.all(
+              color: CustomColors.brightBackground,
+              width: 4.0,
+            ),
           ),
         ),
 
