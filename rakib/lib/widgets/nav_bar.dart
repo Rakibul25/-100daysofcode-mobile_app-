@@ -14,10 +14,11 @@ class NavBar extends StatelessWidget {
   final double width;
   final ScrollController scrollController;
   late final RxDouble collapsableHeight;
+  final GlobalKey intrestsKey;
   NavBar(
       {required this.width,
       required this.scrollController,
-      Key? key})
+      Key? key, required this.intrestsKey})
       : super(key: key) {
     collapsableHeight = 0.0.obs;
   }
@@ -33,6 +34,20 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget navBarRow = Stack(children: [
+      Row(mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                NavBarItem(
+                  text: 'Intrests',
+                  onTap: () => scrollToWidgetByKey(intrestsKey),
+                ),
+                const SizedBox(width: 60),
+              ]),
+        ],
+      ),
       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         const SizedBox(width: 50),
         Row(children: const [

@@ -23,26 +23,50 @@ class Description extends StatelessWidget {
           SizedBox(
             width: isVertical ? double.infinity : width * 0.29,
             height: 30,
-            child: AnimatedTextKit(
-              repeatForever: true,
-              pause: const Duration(seconds: 2),
-              animatedTexts: [
-                TyperAnimatedText(
-                    "Developing mobile applications...",
-                    textAlign: isVertical ? TextAlign.center : TextAlign.start,
-                    textStyle: GoogleFonts.getFont('Delius',
-                        color: CustomColors.gray, fontSize: 15)),
+            child: Row(
+              children: [
+                Text("Developing",textAlign: isVertical ? TextAlign.center : TextAlign.start, style: GoogleFonts.getFont('Delius',color: CustomColors.gray,fontSize: 15)),
+                AnimatedTextKit(
+                  repeatForever: true,
+                  pause: const Duration(seconds: 2),
+                  animatedTexts: [
+                    TyperAnimatedText(
+                        " mobile applications",
+                        textAlign: isVertical ? TextAlign.center : TextAlign.start,
+                        textStyle: GoogleFonts.getFont('Delius',
+                            color: CustomColors.gray, fontSize: 15)),
+                    TyperAnimatedText(
+                        " Web applications",
+                        textAlign: isVertical ? TextAlign.center : TextAlign.start,
+                        textStyle: GoogleFonts.getFont('Delius',
+                            color: CustomColors.gray, fontSize: 15)),
+                  ],
+                ),
               ],
             ),
           ),
-          InkWell(
-            onTap: () async => !await launch(
-                'https://mail.google.com/mail/u/0/?fs=1&to=mdrakib.mri93@gmail.com&tf=cm'),
-            child: Text("Hire Me",
-                style: GoogleFonts.getFont('Delius',
-                    decoration: TextDecoration.underline,
-                    color: CustomColors.primary,
-                    fontSize: 20)),
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: InkWell(
+              onTap: () async => !await launch(
+                  'https://mail.google.com/mail/u/0/?fs=1&to=mdrakib.mri93@gmail.com&tf=cm'),
+              child: Card(
+                color: CustomColors.primary,
+                elevation: 20,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: Center(
+                    child: Text("Hire Me",
+                        style: GoogleFonts.getFont('Delius',
+                            decoration: TextDecoration.underline,
+                            color: CustomColors.darkBackground,
+                            fontSize: 20)),
+                  ),
+                ),
+              ),
+            ),
           )
         ],
       ),
