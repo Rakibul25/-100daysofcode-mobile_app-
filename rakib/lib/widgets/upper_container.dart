@@ -10,7 +10,7 @@ import 'description.dart';
 import 'hello.dart';
 import 'nav_bar.dart';
 
-class UpperContainer extends StatelessWidget {
+class UpperContainer extends StatefulWidget {
   final double width;
   final GlobalKey intrestsKey;
   final ScrollController scrollController;
@@ -23,17 +23,47 @@ class UpperContainer extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<UpperContainer> createState() => _UpperContainerState();
+}
+
+class _UpperContainerState extends State<UpperContainer> with TickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<Offset> _offsetAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 1),
+      vsync: this,
+    );
+    _offsetAnimation = Tween<Offset>(
+      begin: const Offset(0, 0.1),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOut,
+    ));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
+    _controller.forward();
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
             image: ExactAssetImage(ImageAssetConstants.upperback),
             fit: BoxFit.cover),
       ),
-      width: width,
+      width: widget.width,
       child: ClipRRect(
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
           child: Container(
             alignment: Alignment.center,
             color: Colors.grey.withOpacity(0.1),
@@ -45,7 +75,7 @@ class UpperContainer extends StatelessWidget {
                 LayoutBuilder(builder: (context, consraints) {
                   if (consraints.maxWidth >= Breakpoints.lg) {
                     return SizedBox(
-                      height: width*.5,
+                      height: widget.width*.5,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -54,21 +84,27 @@ class UpperContainer extends StatelessWidget {
                             children: [
                               const SizedBox(width: 20),
                               HelloWithBio(
-                                width: 0.45 * width,
+                                width: 0.45 * widget.width,
                                 ratio: 0.5,
                               ),
                               const SizedBox(
                                 width: 40,
                               ),
-                              RakibAvatar(
-                                width: width,
+                              SlideTransition(
+                                position: _offsetAnimation,
+                                child: RakibAvatar(
+                                  width: widget.width,
+                                ),
                               ),
                               const SizedBox(
                                 width: 30,
                               ),
-                              Description(
-                                isVertical: false,
-                                width: width,
+                              SlideTransition(
+                                position: _offsetAnimation,
+                                child: Description(
+                                  isVertical: false,
+                                  width: widget.width,
+                                ),
                               ),
                             ],
                           ),
@@ -81,16 +117,16 @@ class UpperContainer extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(width: 70),
-                        RakibAvatar(width: width*1.3),
-                        SizedBox(height: 0.05 * width),
+                        RakibAvatar(width: widget.width*1.3),
+                        SizedBox(height: 0.05 * widget.width),
                         HelloWithBio(
-                          width: 0.65 * width,
+                          width: 0.65 * widget.width,
                           ratio: 1,
                         ),
-                        SizedBox(height: 0.05 * width),
+                        SizedBox(height: 0.05 * widget.width),
                         Description(
                           isVertical: true,
-                          width: width,
+                          width: widget.width,
                         ),
                         const SizedBox(
                           width: 30,
@@ -101,15 +137,15 @@ class UpperContainer extends StatelessWidget {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(width: width * 0.07),
-                        Center(child: RakibAvatar(width: 2 * width)),
-                        SizedBox(height: 0.05 * width),
+                        SizedBox(width: widget.width * 0.07),
+                        Center(child: RakibAvatar(width: 2 * widget.width)),
+                        SizedBox(height: 0.05 * widget.width),
                         HelloWithBio(
-                          width: 0.45 * width,
+                          width: 0.45 * widget.width,
                           ratio: 1,
                         ),
-                        SizedBox(height: 0.05 * width),
-                        Description(isVertical: true, width: width),
+                        SizedBox(height: 0.05 * widget.width),
+                        Description(isVertical: true, width: widget.width),
                         const SizedBox(
                           width: 30,
                         ),

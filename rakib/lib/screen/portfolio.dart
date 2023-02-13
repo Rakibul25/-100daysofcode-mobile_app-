@@ -6,6 +6,7 @@ import '../utils/custom_colors.dart';
 import '../widgets/footer.dart';
 import '../widgets/lower_container.dart';
 import '../widgets/nav_bar.dart';
+import '../widgets/skills.dart';
 import '../widgets/upper_container.dart';
 
 class Portfolio extends StatefulWidget {
@@ -112,6 +113,7 @@ class _PortfolioState extends State<Portfolio> {
                     scrollController: scrollController,
                   ),
                   SizedBox(height: 10,),
+                  Skills(),
                   LowerContainer(
                     width: width,
                     intrests: intrests,

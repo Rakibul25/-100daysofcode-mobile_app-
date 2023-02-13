@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rakib/screen/portfolio.dart';
 import 'package:rakib/utils/custom_colors.dart';
+import 'package:rakib/widgets/splash.dart';
 
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         highlightColor:CustomColors.primary,
 
       ),
-      home: const Portfolio(),
+      home: const Splash(),
     );
   }
 }

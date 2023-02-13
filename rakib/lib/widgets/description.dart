@@ -5,7 +5,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 
 import '../utils/custom_colors.dart';
 
-class Description extends StatelessWidget {
+class Description extends StatefulWidget {
   final bool isVertical;
   final double width;
 
@@ -13,32 +13,37 @@ class Description extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<Description> createState() => _DescriptionState();
+}
+
+class _DescriptionState extends State<Description> {
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: isVertical ? double.infinity : width * 0.29,
+      width: widget.isVertical ? double.infinity : widget.width * 0.29,
       child: Column(
         crossAxisAlignment:
-            isVertical ? CrossAxisAlignment.center : CrossAxisAlignment.center,
+            widget.isVertical ? CrossAxisAlignment.center : CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: isVertical ? double.infinity : width * 0.29,
+            width: widget.isVertical ? double.infinity : widget.width * 0.29,
             height: 30,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Developing",textAlign: isVertical ? TextAlign.center : TextAlign.center, style: GoogleFonts.getFont('Delius',color: CustomColors.gray,fontSize: 22)),
+                Text("Developing",textAlign: widget.isVertical ? TextAlign.center : TextAlign.center, style: GoogleFonts.getFont('Delius',color: CustomColors.gray,fontSize: 22)),
                 AnimatedTextKit(
                   repeatForever: true,
                   pause: const Duration(seconds: 2),
                   animatedTexts: [
                     TyperAnimatedText(
                         " mobile applications",
-                        textAlign: isVertical ? TextAlign.center : TextAlign.center,
+                        textAlign: widget.isVertical ? TextAlign.center : TextAlign.center,
                         textStyle: GoogleFonts.getFont('Delius',
                             color: CustomColors.gray, fontSize: 22)),
                     TyperAnimatedText(
                         " web applications",
-                        textAlign: isVertical ? TextAlign.center : TextAlign.center,
+                        textAlign: widget.isVertical ? TextAlign.center : TextAlign.center,
                         textStyle: GoogleFonts.getFont('Delius',
                             color: CustomColors.gray, fontSize: 22)),
                   ],
@@ -46,6 +51,7 @@ class Description extends StatelessWidget {
               ],
             ),
           ),
+          Divider(),
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: InkWell(
