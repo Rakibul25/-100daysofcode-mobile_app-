@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:rakib/utils/custom_colors.dart';
 
 class SkillCard extends StatelessWidget {
   const SkillCard({
@@ -28,13 +30,14 @@ class SkillCard extends StatelessWidget {
                   children: [
                     CircularProgressIndicator(
                       value: value,
-                      color: Colors.brown,
-                      backgroundColor: Colors.white,
+                      color: CustomColors.primary,
+                      backgroundColor: CustomColors.darkBackground,
+                      strokeWidth: 1,
                     ),
                     Center(
                       child: Text(
                         (value * 100).toInt().toString() + "%",
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),
                       ),
                     ),
                   ],
@@ -47,7 +50,9 @@ class SkillCard extends StatelessWidget {
             label,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subtitle2,
+              style: GoogleFonts.getFont('Delius',
+                  color: CustomColors.gray,
+                  fontSize: 15)
           ),
         ],
       ),

@@ -53,6 +53,7 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
   }
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     _controller.forward();
     return Container(
       decoration: const BoxDecoration(
@@ -67,93 +68,99 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
           child: Container(
             alignment: Alignment.center,
             color: Colors.grey.withOpacity(0.1),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 5,
-                ),
-                LayoutBuilder(builder: (context, consraints) {
-                  if (consraints.maxWidth >= Breakpoints.lg) {
-                    return SizedBox(
-                      height: widget.width*.5,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(width: 20),
-                              HelloWithBio(
-                                width: 0.45 * widget.width,
-                                ratio: 0.5,
-                              ),
-                              const SizedBox(
-                                width: 40,
-                              ),
-                              SlideTransition(
-                                position: _offsetAnimation,
-                                child: RakibAvatar(
-                                  width: widget.width,
+            child: SizedBox(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  LayoutBuilder(builder: (context, consraints) {
+                    if (consraints.maxWidth >= Breakpoints.lg) {
+                      return SizedBox(
+                        width: size.width,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(width: 20),
+                                HelloWithBio(
+                                  width: 0.45 * widget.width,
+                                  ratio: 0.5,
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 30,
-                              ),
-                              SlideTransition(
-                                position: _offsetAnimation,
-                                child: Description(
-                                  isVertical: false,
-                                  width: widget.width,
+                                const SizedBox(
+                                  width: 40,
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  } else if (consraints.maxWidth < Breakpoints.lg &&
-                      consraints.maxWidth >= Breakpoints.md) {
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(width: 70),
-                        RakibAvatar(width: widget.width*1.3),
-                        SizedBox(height: 0.05 * widget.width),
-                        HelloWithBio(
-                          width: 0.65 * widget.width,
-                          ratio: 1,
+                                SlideTransition(
+                                  position: _offsetAnimation,
+                                  child: RakibAvatar(
+                                    width: widget.width,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                SlideTransition(
+                                  position: _offsetAnimation,
+                                  child: Description(
+                                    isVertical: false,
+                                    width: widget.width,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 0.05 * widget.width),
-                        Description(
-                          isVertical: true,
-                          width: widget.width,
+                      );
+                    } else if (consraints.maxWidth < Breakpoints.lg &&
+                        consraints.maxWidth >= Breakpoints.md) {
+                      return SizedBox(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(width: 30),
+                            RakibAvatar(width: widget.width*1.3),
+                            SizedBox(height: 0.05 * widget.width),
+                            HelloWithBio(
+                              width: 0.65 * widget.width,
+                              ratio: 1,
+                            ),
+                            SizedBox(height: 0.05 * widget.width),
+                            Description(
+                              isVertical: true,
+                              width: widget.width,
+                            ),
+                            const SizedBox(
+                              width: 30,
+                            ),
+                          ],
                         ),
-                        const SizedBox(
-                          width: 30,
+                      );
+                    } else {
+                      return SizedBox(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(width: 10),
+                            Center(child: RakibAvatar(width: 2 * widget.width)),
+                            SizedBox(height: 0.05 * widget.width),
+                            HelloWithBio(
+                              width: 0.45 * widget.width,
+                              ratio: 1,
+                            ),
+                            SizedBox(height: 0.05 * widget.width),
+                            Description(isVertical: true, width: widget.width),
+                            const SizedBox(
+                              width: 30,
+                            ),
+                          ],
                         ),
-                      ],
-                    );
-                  } else {
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(width: widget.width * 0.07),
-                        Center(child: RakibAvatar(width: 2 * widget.width)),
-                        SizedBox(height: 0.05 * widget.width),
-                        HelloWithBio(
-                          width: 0.45 * widget.width,
-                          ratio: 1,
-                        ),
-                        SizedBox(height: 0.05 * widget.width),
-                        Description(isVertical: true, width: widget.width),
-                        const SizedBox(
-                          width: 30,
-                        ),
-                      ],
-                    );
-                  }
-                }),
-              ],
+                      );
+                    }
+                  }),
+                ],
+              ),
             ),
           ),
         ),
