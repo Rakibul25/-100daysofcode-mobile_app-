@@ -22,8 +22,8 @@ class _RakibAvatarState extends State<RakibAvatar> {
       alignment: Alignment.centerLeft,
       children: [
         Container(
-          width: widget.width*.22,
-          height: widget.width*.22,
+          width: widget.width*.20,
+          height: widget.width*.20,
           decoration: BoxDecoration(
             color: const Color(0xff7c94b6),
             image: const DecorationImage(

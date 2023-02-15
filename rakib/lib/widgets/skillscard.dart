@@ -31,8 +31,8 @@ class SkillCard extends StatelessWidget {
                     CircularProgressIndicator(
                       value: value,
                       color: CustomColors.primary,
-                      backgroundColor: CustomColors.darkBackground,
-                      strokeWidth: 1,
+                      backgroundColor: Colors.black,
+                      strokeWidth: 3,
                     ),
                     Center(
                       child: Text(
@@ -45,7 +45,7 @@ class SkillCard extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           Text(
             label,
             maxLines: 1,
@@ -59,3 +59,46 @@ class SkillCard extends StatelessWidget {
     );
   }
 }
+class SkillCardLinear extends StatelessWidget {
+  const SkillCardLinear({
+    Key? key,
+    required this.percentage,
+    required this.label,
+  }) : super(key: key);
+
+  final double percentage;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 100,
+      width: 200,
+      child: TweenAnimationBuilder(
+          tween: Tween<double>(begin: 0, end: percentage),
+          duration: Duration(seconds: 4),
+          builder: (context, double value, child) => Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    label,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Text((value * 100).toInt().toString() + "%"),
+                ],
+              ),
+              SizedBox(height: 10),
+              LinearProgressIndicator(
+                value: value,
+                color: CustomColors.primary,
+                backgroundColor: Colors.black,
+              ),
+            ],
+          ),
+      ),
+    );
+  }
+}
+

@@ -72,7 +72,7 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 5,
+                    height: 20,
                   ),
                   LayoutBuilder(builder: (context, consraints) {
                     if (consraints.maxWidth >= Breakpoints.lg) {
@@ -80,7 +80,9 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                         width: size.width,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            SizedBox(height: 70,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -110,6 +112,7 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                                 ),
                               ],
                             ),
+                            SizedBox(height: 70,),
                           ],
                         ),
                       );
@@ -121,7 +124,7 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                           children: [
                             SizedBox(width: 30),
                             RakibAvatar(width: widget.width*1.3),
-                            SizedBox(height: 0.05 * widget.width),
+                            SizedBox(height: 0.01 * widget.width),
                             HelloWithBio(
                               width: 0.65 * widget.width,
                               ratio: 1,
@@ -152,7 +155,7 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                             SizedBox(height: 0.05 * widget.width),
                             Description(isVertical: true, width: widget.width),
                             const SizedBox(
-                              width: 30,
+                              width: 60,
                             ),
                           ],
                         ),

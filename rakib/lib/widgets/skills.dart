@@ -23,7 +23,7 @@ class _SkillsState extends State<Skills> {
         color: CustomColors.darkBackground,
         child: SizedBox(
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 40),
                 Text("Skills",
@@ -34,27 +34,92 @@ class _SkillsState extends State<Skills> {
                   if (consraints.maxWidth >= Breakpoints.lg) {
                     return Container(
                       width: size.width * .65,
-                      child: Column(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Lottie.asset('assets/lotties/programming.json',
-                                      height: 200, width: 200),
-                                  Text("Language & Tools",
-                                      style: GoogleFonts.getFont('Delius',
-                                          color: CustomColors.gray,
-                                          fontSize: 22)),
-                                ],
-                              ),
-                              const SkillCard(percentage: 0.7, label: "Flutter"),
-
-                            ],
+                          Container(
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text("Language & Tools",
+                                            style: GoogleFonts.getFont('Delius',
+                                                color: CustomColors.gray,
+                                                fontSize: 22)),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Column(
+                                              children: const [
+                                                SkillCard(
+                                                    percentage: 0.7,
+                                                    label: "Dart"),
+                                                SizedBox(
+                                                  height: 20,
+                                                ),
+                                                SkillCard(
+                                                    percentage: 0.7,
+                                                    label: "Java"),
+                                              ],
+                                            ),
+                                            Column(
+                                              children: const [
+                                                SkillCard(
+                                                    percentage: 0.7,
+                                                    label: "C"),
+                                                SizedBox(
+                                                  height: 20,
+                                                ),
+                                                SkillCard(
+                                                    percentage: 0.6,
+                                                    label: "Python"),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          Lottie.asset('assets/lotties/programming.json',
+                              height: 200, width: 200),
+                          Container(
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Column(
+                                          children: const [
+                                            SkillCardLinear(
+                                                percentage: 0.7, label: "Dart"),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            SkillCardLinear(
+                                                percentage: 0.7, label: "Java"),
+                                          ],
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -63,15 +128,15 @@ class _SkillsState extends State<Skills> {
                       consraints.maxWidth >= Breakpoints.md) {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SkillCard(percentage: 0.7, label: "Flutter"),
+                      children: const [
+                        SkillCard(percentage: 0.7, label: "Flutter"),
                       ],
                     );
                   } else {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SkillCard(percentage: 0.7, label: "Flutter"),
+                      children: const [
+                        SkillCard(percentage: 0.7, label: "Flutter"),
                       ],
                     );
                   }
