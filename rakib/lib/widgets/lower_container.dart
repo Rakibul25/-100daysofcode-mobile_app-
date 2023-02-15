@@ -13,11 +13,13 @@ class LowerContainer extends StatelessWidget {
   final double width;
   final List<Map> intrests;
   final GlobalKey intrestsKey;
+  final GlobalKey projectsKey;
 
   const LowerContainer({Key? key,
     required this.width,
     required this.intrests,
     required this.intrestsKey,
+    required this.projectsKey,
    })
       : super(key: key);
 
@@ -27,6 +29,7 @@ class LowerContainer extends StatelessWidget {
         width: width,
         color: CustomColors.darkBackground,
         child: Column(
+          key: projectsKey,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(height: 40),
@@ -49,17 +52,17 @@ class LowerContainer extends StatelessWidget {
                             const SizedBox(height: 10),
                             ProjectCard(
                               title: 'HomeRent-(Flutter Project)',
-                              description:
-                              'This is a home rent or buying system. Where someone can find a home based on location and sorting price, size.',
-                              link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/homerent',
+                              imagesource:
+                              'assets/appss/homerent.png',
+                              link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/appss',
                               width: width,
                               ratio: 0.35,
                             ),
                             const SizedBox(height: 10),
                             ProjectCard(
                               title: 'BankApp-(Flutter Project)',
-                              description:
-                              'This is a home rent or buying system. Where someone can find home based on location and sorting price, size.',
+                              imagesource:
+                              'assets/appss/homerent.png',
                               link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/bank',
                               width: width,
                               ratio: 0.35,
@@ -67,48 +70,46 @@ class LowerContainer extends StatelessWidget {
                             const SizedBox(height: 10),
                             ProjectCard(
                                 title: 'ShareCare(A ride sharing app-Final year project)',
-                                description:
-                                'It was my final year project. There was colossal research and analysis before designing this. We designed a ride-sharing app which will reduce the transportation cost of city traffic jam. For details of this project CLICK here.',
+                                imagesource:
+                                'assets/appss/homerent.png',
                                 link: 'https://github.com/Rakibul25/ShareCare',
                                 width: width,
                                 ratio: 0.35),
                           ],
                         ),
-                        SizedBox(width: 0.05 * width),
-                        // hello with bio and info
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             const SizedBox(height: 10),
                             ProjectCard(
-                              title: 'Course Content Management(Android Java lab project with firebase)',
-                              description:
-                              'This project is for my university android development course. The idea is to make an application where a teacher can upload class content. ',
-                              link: 'https://github.com/Rakibul25/Android-lab-project',
+                              title: 'HomeRent-(Flutter Project)',
+                              imagesource:
+                              'assets/appss/homerent.png',
+                              link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/appss',
                               width: width,
                               ratio: 0.35,
                             ),
                             const SizedBox(height: 10),
                             ProjectCard(
-                              title: 'CareerBuilder-Web Project',
-                              description:
-                              'A web project for lab, this project was made with html and css. Php and mysql was for backend.',
-                              link: 'https://github.com/Rakibul25/web-app-uni-course-',
+                              title: 'BankApp-(Flutter Project)',
+                              imagesource:
+                              'assets/appss/homerent.png',
+                              link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/bank',
                               width: width,
                               ratio: 0.35,
                             ),
                             const SizedBox(height: 10),
                             ProjectCard(
-                                title: 'Portfolio(1) with flutter',
-                                description:
-                                'Personal practice project, it was a portfolio website with flutter web',
-                                link: 'https://github.com/Rakibul25/myPortfolio',
+                                title: 'ShareCare(A ride sharing app-Final year project)',
+                                imagesource:
+                                'assets/appss/homerent.png',
+                                link: 'https://github.com/Rakibul25/ShareCare',
                                 width: width,
                                 ratio: 0.35),
-
                           ],
                         ),
+
                       ],
                     ),
                     const SizedBox(height: 10),
@@ -139,51 +140,45 @@ class LowerContainer extends StatelessWidget {
                       children: [
                         ProjectCard(
                             title: 'HomeRent-(Flutter Project)',
-                            description:
-                            'This is a home rent or buying system. Where someone can find a home based on location and sorting price, size.',
-                            link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/homerent',
-                            width: 2 * width,
-                            ratio: 0.45),
+                            imagesource: 'assets/appss/homerent.png',
+                            link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/appss',
+                            width: 2*width,
+                            ratio: 0.35),
                         const SizedBox(height: 10),
                         ProjectCard(
                             title: 'BankApp-(Flutter Project)',
-                            description:
-                            'This is a home rent or buying system. Where someone can find home based on location and sorting price, size.',
+                           imagesource: 'assets/appss/homerent.png',
                             link: 'https://github.com/Rakibul25/-100daysofcode-mobile_app-/tree/100days/bank',
                             width: 2 * width,
-                            ratio: 0.45),
+                            ratio: 0.35),
                         const SizedBox(height: 10),
                         ProjectCard(
                             title: 'ShareCare(A ride sharing app-Final year project)',
-                            description:
-                            'It was my final year project. There was colossal research and analysis before designing this. We designed a ride-sharing app which will reduce the transportation cost of city traffic jam. For details of this project CLICK here.',
+                            imagesource: 'assets/appss/homerent.png',
                             link: 'https://github.com/Rakibul25/ShareCare',
                             width: 2 * width,
-                            ratio: 0.45),
+                            ratio: 0.35),
                         const SizedBox(height: 10),
                         ProjectCard(
                             title: 'Course Content Management(Android Java lab project with firebase)',
-                            description:
-                            'This project is for my university android development course. The idea is to make an application where a teacher can upload class content. ',
+                            imagesource: 'assets/appss/homerent.png',
                             link: 'https://github.com/Rakibul25/Android-lab-project',
                             width: 2 * width,
-                            ratio: 0.45),
+                            ratio: 0.35),
                         const SizedBox(height: 10),
                         ProjectCard(
                             title: 'CareerBuilder-Web Project',
-                            description:
-                            'A web project for lab, this project was made with html and css. Php and mysql was for backend.',
+                            imagesource: 'assets/appss/homerent.png',
                             link: 'https://github.com/Rakibul25/web-app-uni-course-',
                             width: 2 * width,
-                            ratio: 0.45),
+                            ratio: 0.35),
                         const SizedBox(height: 10),
                         ProjectCard(
                             title: 'Portfolio(1) with flutter',
-                            description:
-                            'Personal practice project, it was a portfolio website with flutter web',
+                            imagesource: 'assets/appss/homerent.png',
                             link: 'https://github.com/Rakibul25/myPortfolio',
                             width: 2 * width,
-                            ratio: 0.45),
+                            ratio: 0.35),
                         const SizedBox(height: 10),
                         InkWell(
                           onTap: () async =>

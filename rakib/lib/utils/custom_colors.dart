@@ -8,4 +8,5 @@ class CustomColors{
   static const Color secondary=Color(0xffDF504A);
   static const Color purple=Color(0xfff5cc14);
   static const Color gray=Color(0xffD3D3D3);
+  static const Color white=Color(0xffffffff);
 }

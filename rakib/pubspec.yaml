@@ -43,6 +43,8 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^4.0.1
   universal_html: ^2.0.8
+  lottie: ^2.2.0
+  percent_indicator: ^4.2.2
 
 
 dev_dependencies:
@@ -73,10 +75,9 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/images/github.png
-    - assets/images/linkedIn.png
-    - assets/images/myavatar.png
-    - assets/images/instagram.png
+    - assets/images/
+    - assets/lotties/
+    - assets/appss/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

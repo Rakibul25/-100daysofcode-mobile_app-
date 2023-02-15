@@ -14,10 +14,15 @@ class NavBar extends StatelessWidget {
   final double width;
   final ScrollController scrollController;
   late final RxDouble collapsableHeight;
+  final GlobalKey intrestsKey;
+  final GlobalKey skillsKey;
+  final GlobalKey projectskey;
+
   NavBar(
       {required this.width,
       required this.scrollController,
-      Key? key})
+      Key? key,
+      required this.intrestsKey, required this.skillsKey, required this.projectskey})
       : super(key: key) {
     collapsableHeight = 0.0.obs;
   }
@@ -32,30 +37,71 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget navBarRow = Stack(children: [
-      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-        const SizedBox(width: 50),
-        Row(children: const [
-          NavBarItemWithIcon(
-            text: 'github',
-            icon: ImageAssetConstants.github,
-            url: 'https://github.com/Rakibul25',
-          ),
-          SizedBox(width: 10),
-          NavBarItemWithIcon(
-              text: 'Instagram',
-              icon: ImageAssetConstants.instagram,
-              url: 'https://www.instagram.com/rakibul_islam_25/'),
-          SizedBox(width: 10),
-          NavBarItemWithIcon(
-              text: 'linkedIn',
-              icon: ImageAssetConstants.linkedIn,
-              url: 'https://www.linkedin.com/in/rakibul-islam-9078b1187/'),
-          SizedBox(width: 50),
+    Widget navBarRow = Container(
+      color: CustomColors.brightBackground,
+      child: Stack(children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(width: 10),
+            Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  NavBarItem(
+                    text: 'Intrests',
+                    onTap: () => scrollToWidgetByKey(intrestsKey),
+                  ),
+                  const SizedBox(width: 10),
+                  NavBarItem(
+                    text: 'Skills',
+                    onTap: () => scrollToWidgetByKey(skillsKey),
+                  ),
+                  const SizedBox(width: 10),
+                  NavBarItem(
+                    text: 'Projects',
+                    onTap: () => scrollToWidgetByKey(projectskey),
+                  ),
+                  const SizedBox(width: 10),
+                ]),
+          ],
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+          const SizedBox(width: 10),
+          Row(children: const [
+            NavBarItemWithIcon(
+              text: 'github',
+              icon: ImageAssetConstants.github,
+              url: 'https://github.com/Rakibul25',
+            ),
+            SizedBox(width: 10),
+            NavBarItemWithIcon(
+                text: 'Instagram',
+                icon: ImageAssetConstants.instagram,
+                url: 'https://www.instagram.com/rakibul_islam_25/'),
+            SizedBox(width: 10),
+            NavBarItemWithIcon(
+                text: 'linkedIn',
+                icon: ImageAssetConstants.linkedIn,
+                url: 'https://www.linkedin.com/in/rakibul-islam-9078b1187/'),
+            SizedBox(width: 5),
+          ])
         ])
-      ])
-    ]);
+      ]),
+    );
     List<Widget>? navBarColumn = [
+      NavBarItem(
+        text: 'Intrests',
+        onTap: () => scrollToWidgetByKey(intrestsKey),
+      ),
+      NavBarItem(
+        text: 'Skills',
+        onTap: () => scrollToWidgetByKey(skillsKey),
+      ),
+      NavBarItem(
+        text: 'Projects',
+        onTap: () => scrollToWidgetByKey(projectskey),
+      ),
       NavBarItem(
           text: 'github',
           onTap: () async {
@@ -74,7 +120,7 @@ class NavBar extends StatelessWidget {
       children: [
         ObxValue<RxDouble>(
             (data) => AnimatedContainer(
-                  margin: const EdgeInsets.only(top: 110.0),
+                  margin: const EdgeInsets.only(top: 30.0,bottom: 5.0),
                   duration: const Duration(milliseconds: 375),
                   curve: Curves.ease,
                   height: data.value,
@@ -90,8 +136,8 @@ class NavBar extends StatelessWidget {
                 ),
             collapsableHeight),
         Container(
-          height: 80.0,
-          margin: const EdgeInsets.only(top: 40.0),
+          height: 30.0,
+          margin: const EdgeInsets.only(top: 15.0,bottom: 5.0),
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: (width < Breakpoints.xlg)
               ? Row(
