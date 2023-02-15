@@ -18,9 +18,9 @@ class Portfolio extends StatefulWidget {
 
 class _PortfolioState extends State<Portfolio> {
   late final List<Map> intrests;
-  late final List<Map> skills;
   late final GlobalKey intrestsKey;
   late final GlobalKey skillskey;
+  late final GlobalKey projectkey;
   late final ScrollController scrollController;
   late final RxBool showFloatingButton;
 
@@ -28,6 +28,7 @@ class _PortfolioState extends State<Portfolio> {
   void initState() {
     intrestsKey = GlobalKey();
     skillskey = GlobalKey();
+    projectkey = GlobalKey();
     scrollController = ScrollController();
     showFloatingButton = false.obs;
 
@@ -109,6 +110,7 @@ class _PortfolioState extends State<Portfolio> {
                     scrollController: scrollController,
                     intrestsKey: intrestsKey,
                     skillsKey: skillskey,
+                    projectskey: projectkey,
                   ),
                   SizedBox(
                     height: 10,
@@ -128,6 +130,7 @@ class _PortfolioState extends State<Portfolio> {
                     width: width,
                     intrests: intrests,
                     intrestsKey: intrestsKey,
+                    projectsKey: projectkey
                   ),
                   Container(
                     width: width,

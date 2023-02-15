@@ -7,4 +7,5 @@ class ImageAssetConstants{
   static const String rakib_sit='assets/images/sitting.jpeg';
   static const String rakib_black='assets/images/blacksuit.jpeg';
   static const String upperback='assets/images/upperback.jpg';
+  static const String homess='assets/appss/homerent.png';
 }

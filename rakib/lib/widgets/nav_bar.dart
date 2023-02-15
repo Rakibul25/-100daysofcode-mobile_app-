@@ -16,12 +16,13 @@ class NavBar extends StatelessWidget {
   late final RxDouble collapsableHeight;
   final GlobalKey intrestsKey;
   final GlobalKey skillsKey;
+  final GlobalKey projectskey;
 
   NavBar(
       {required this.width,
       required this.scrollController,
       Key? key,
-      required this.intrestsKey, required this.skillsKey})
+      required this.intrestsKey, required this.skillsKey, required this.projectskey})
       : super(key: key) {
     collapsableHeight = 0.0.obs;
   }
@@ -55,6 +56,11 @@ class NavBar extends StatelessWidget {
                   NavBarItem(
                     text: 'Skills',
                     onTap: () => scrollToWidgetByKey(skillsKey),
+                  ),
+                  const SizedBox(width: 10),
+                  NavBarItem(
+                    text: 'Projects',
+                    onTap: () => scrollToWidgetByKey(projectskey),
                   ),
                   const SizedBox(width: 10),
                 ]),
@@ -91,6 +97,10 @@ class NavBar extends StatelessWidget {
       NavBarItem(
         text: 'Skills',
         onTap: () => scrollToWidgetByKey(skillsKey),
+      ),
+      NavBarItem(
+        text: 'Projects',
+        onTap: () => scrollToWidgetByKey(projectskey),
       ),
       NavBarItem(
           text: 'github',
