@@ -24,7 +24,7 @@ class SkillCard extends StatelessWidget {
               aspectRatio: 1,
               child: TweenAnimationBuilder(
                 tween: Tween<double>(begin: 0, end: percentage),
-                duration: Duration(seconds: 4),
+                duration: const Duration(seconds: 4),
                 builder: (context, double value, child) => Stack(
                   fit: StackFit.expand,
                   children: [
@@ -37,7 +37,7 @@ class SkillCard extends StatelessWidget {
                     Center(
                       child: Text(
                         (value * 100).toInt().toString() + "%",
-                        style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),
+                        style: const TextStyle(fontWeight: FontWeight.w500,color: Colors.white),
                       ),
                     ),
                   ],
@@ -45,7 +45,7 @@ class SkillCard extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             label,
             maxLines: 1,
@@ -72,28 +72,34 @@ class SkillCardLinear extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 60,
       width: 200,
       child: TweenAnimationBuilder(
           tween: Tween<double>(begin: 0, end: percentage),
-          duration: Duration(seconds: 4),
+          duration: const Duration(seconds: 4),
           builder: (context, double value, child) => Column(
             children: [
+              const SizedBox(height: 5,),
+              LinearProgressIndicator(
+                value: value,
+                color: CustomColors.primary,
+                backgroundColor: Colors.black,
+              ),
+              const SizedBox(height: 5,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     label,
-                    style: TextStyle(color: Colors.white),
+                      style: GoogleFonts.getFont('Delius',
+                          color: CustomColors.gray,
+                          fontSize: 15)
                   ),
-                  Text((value * 100).toInt().toString() + "%"),
+                  Text(
+                    (value * 100).toInt().toString() + "%",
+                    style: const TextStyle(fontWeight: FontWeight.w500,color: Colors.white),
+                  ),
                 ],
-              ),
-              SizedBox(height: 10),
-              LinearProgressIndicator(
-                value: value,
-                color: CustomColors.primary,
-                backgroundColor: Colors.black,
               ),
             ],
           ),
