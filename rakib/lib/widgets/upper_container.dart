@@ -26,7 +26,8 @@ class UpperContainer extends StatefulWidget {
   State<UpperContainer> createState() => _UpperContainerState();
 }
 
-class _UpperContainerState extends State<UpperContainer> with TickerProviderStateMixin {
+class _UpperContainerState extends State<UpperContainer>
+    with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _offsetAnimation;
 
@@ -51,6 +52,7 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -82,7 +84,9 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SizedBox(height: 70,),
+                            const SizedBox(
+                              height: 70,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -94,11 +98,8 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                                 const SizedBox(
                                   width: 40,
                                 ),
-                                SlideTransition(
-                                  position: _offsetAnimation,
-                                  child: RakibAvatar(
-                                    width: widget.width,
-                                  ),
+                                RakibAvatar(
+                                  width: widget.width,
                                 ),
                                 const SizedBox(
                                   width: 30,
@@ -112,7 +113,9 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                                 ),
                               ],
                             ),
-                            SizedBox(height: 70,),
+                            const SizedBox(
+                              height: 50,
+                            ),
                           ],
                         ),
                       );
@@ -122,8 +125,8 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(width: 30),
-                            RakibAvatar(width: widget.width*1.3),
+                            const SizedBox(width: 30),
+                            RakibAvatar(width: widget.width * 1.3),
                             SizedBox(height: 0.01 * widget.width),
                             HelloWithBio(
                               width: 0.65 * widget.width,
@@ -135,7 +138,7 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                               width: widget.width,
                             ),
                             const SizedBox(
-                              width: 30,
+                              height: 70,
                             ),
                           ],
                         ),
@@ -145,17 +148,17 @@ class _UpperContainerState extends State<UpperContainer> with TickerProviderStat
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             Center(child: RakibAvatar(width: 2 * widget.width)),
                             SizedBox(height: 0.05 * widget.width),
                             HelloWithBio(
-                              width: 0.45 * widget.width,
+                              width: 0.55 * widget.width,
                               ratio: 1,
                             ),
                             SizedBox(height: 0.05 * widget.width),
                             Description(isVertical: true, width: widget.width),
                             const SizedBox(
-                              width: 60,
+                              height: 50,
                             ),
                           ],
                         ),

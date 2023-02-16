@@ -32,7 +32,7 @@ class NavBar extends StatelessWidget {
     Offset position = box.localToGlobal(Offset.zero); //this is global position
     double y = position.dy;
     scrollController.animateTo(y,
-        duration: const Duration(milliseconds: 700), curve: Curves.easeInOut);
+        duration: const Duration(milliseconds: 1000), curve: Curves.easeInOut);
   }
 
   @override
@@ -49,7 +49,7 @@ class NavBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   NavBarItem(
-                    text: 'Intrests',
+                    text: 'Interest',
                     onTap: () => scrollToWidgetByKey(intrestsKey),
                   ),
                   const SizedBox(width: 10),
@@ -91,7 +91,7 @@ class NavBar extends StatelessWidget {
     );
     List<Widget>? navBarColumn = [
       NavBarItem(
-        text: 'Intrests',
+        text: 'Interest',
         onTap: () => scrollToWidgetByKey(intrestsKey),
       ),
       NavBarItem(

@@ -17,7 +17,7 @@ class _SplashState extends State<Splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(const Duration(seconds: 1),(){
+    Future.delayed(const Duration(seconds: 2),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Portfolio()));
     });
   }
@@ -35,11 +35,10 @@ class _SplashState extends State<Splash> {
           children: [
             Text("Loading Rakib",
                 style: GoogleFonts.getFont('Delius',
-                    decoration: TextDecoration.underline,
                     color: CustomColors.white,
                     fontSize: 20)),
-            SizedBox(height: 30,),
-            CupertinoActivityIndicator(
+            const SizedBox(height: 30,),
+            const CupertinoActivityIndicator(
               animating: true,
               radius: 20,
               color: Colors.white,

@@ -31,7 +31,7 @@ class _DescriptionState extends State<Description> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Developing",textAlign: widget.isVertical ? TextAlign.center : TextAlign.center, style: GoogleFonts.getFont('Delius',color: CustomColors.gray,fontSize: 18)),
+                Text("Developing",textAlign: widget.isVertical ? TextAlign.center : TextAlign.center, style: GoogleFonts.getFont('Delius',color: CustomColors.white,fontSize: 22)),
                 AnimatedTextKit(
                   repeatForever: true,
                   pause: const Duration(seconds: 2),
@@ -40,12 +40,12 @@ class _DescriptionState extends State<Description> {
                         " mobile applications",
                         textAlign: widget.isVertical ? TextAlign.center : TextAlign.center,
                         textStyle: GoogleFonts.getFont('Delius',
-                            color: CustomColors.gray, fontSize: 18)),
+                            color: CustomColors.white, fontSize: 22)),
                     TyperAnimatedText(
                         " web applications",
                         textAlign: widget.isVertical ? TextAlign.center : TextAlign.center,
                         textStyle: GoogleFonts.getFont('Delius',
-                            color: CustomColors.gray, fontSize: 18)),
+                            color: CustomColors.white, fontSize: 22)),
                   ],
                 ),
               ],

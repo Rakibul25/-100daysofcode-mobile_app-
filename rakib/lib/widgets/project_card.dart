@@ -12,6 +12,7 @@ class ProjectCard extends StatelessWidget {
   final String link;
   final double width;
   final double ratio;
+  final double fontsize;
 
   const ProjectCard(
       {required this.title,
@@ -19,6 +20,7 @@ class ProjectCard extends StatelessWidget {
       required this.link,
       required this.width,
       required this.ratio,
+      required this.fontsize,
       Key? key})
       : super(key: key);
 
@@ -28,26 +30,30 @@ class ProjectCard extends StatelessWidget {
     return Card(
       color: CustomColors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      child: Column(
-       children: [
-         SizedBox(
-           width: width * ratio,
-           height: size.height * .45,
-           child: Container(
-               height: size.height * ratio,
-               width: size.width * 0.30,
-               child: Image.asset(imagesource)),
-         ),
-         InkWell(
-           onTap: () async => !await launch(link),
-           child: Text("View in github",
-               style: GoogleFonts.getFont('Delius',
-                   decoration: TextDecoration.underline,
-                   color: Colors.black,
-                   fontSize: 16)),
-         )
+      child: Container(
+        width: width * ratio,
+        height: width * ratio,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         children: [
+           SizedBox(
+             child: Container(
+                 child: Image.asset(imagesource,height: width * ratio*.8,width: width * ratio*.7,)),
+           ),
+           Padding(
+             padding: const EdgeInsets.only(bottom: 5.0),
+             child: InkWell(
+               onTap: () async => !await launch(link),
+               child: Text("View in github",
+                   style: GoogleFonts.getFont('Delius',
+                       decoration: TextDecoration.underline,
+                       color: Colors.black,
+                       fontSize: fontsize)),
+             ),
+           )
 
-       ],
+         ],
+        ),
       ),
 
     );

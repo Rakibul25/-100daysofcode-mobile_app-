@@ -43,7 +43,6 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^4.0.1
   universal_html: ^2.0.8
-  lottie: ^2.2.0
   percent_indicator: ^4.2.2
 
 
@@ -76,7 +75,6 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
-    - assets/lotties/
     - assets/appss/
 
 

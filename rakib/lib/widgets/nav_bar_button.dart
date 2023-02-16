@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../utils/breakpoints.dart';
 import '../utils/custom_colors.dart';
 
-
 class NavBarButton extends StatelessWidget {
   final Function onPressed;
   final double width;
@@ -19,11 +18,10 @@ class NavBarButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         elevation: 4.0,
         shape: const CircleBorder(),
-        padding: EdgeInsets.all(width >= Breakpoints.md? 0.03 * width : 0.03 * 762),
-        primary:
-            CustomColors.darkBackground, // <-- Button color
-        onPrimary:
-            CustomColors.brightBackground, // <-- Splash color
+
+        primary: CustomColors.darkBackground,
+        // <-- Button color
+        onPrimary: CustomColors.brightBackground, // <-- Splash color
       ),
     );
   }

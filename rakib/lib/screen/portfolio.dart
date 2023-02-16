@@ -112,7 +112,7 @@ class _PortfolioState extends State<Portfolio> {
                     skillsKey: skillskey,
                     projectskey: projectkey,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   UpperContainer(
@@ -120,11 +120,14 @@ class _PortfolioState extends State<Portfolio> {
                     intrestsKey: intrestsKey,
                     scrollController: scrollController,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Skills(
                     skillsKey: skillskey,
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   LowerContainer(
                     width: width,
@@ -132,10 +135,16 @@ class _PortfolioState extends State<Portfolio> {
                     intrestsKey: intrestsKey,
                     projectsKey: projectkey
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Container(
                     width: width,
                     height: 0.1,
                     color: CustomColors.gray,
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   Footer(
                     width: width,

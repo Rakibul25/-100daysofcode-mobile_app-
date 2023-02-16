@@ -26,7 +26,7 @@ class Intrest extends StatelessWidget {
                   ? CustomColors.primary
                   : textColor)),
       child: Center(
-          child: Text('.' + intrest,
+          child: Text('.$intrest',
               style: GoogleFonts.getFont('Delius',
                   color: textColor, fontSize: 13))),
     );
