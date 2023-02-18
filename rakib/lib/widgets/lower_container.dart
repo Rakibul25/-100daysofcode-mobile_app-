@@ -13,15 +13,15 @@ import 'interest.dart';
 
 class LowerContainer extends StatelessWidget {
   final double width;
-  final List<Map> intrests;
-  final GlobalKey intrestsKey;
+  final List<Map> interests;
+  final GlobalKey interestsKey;
   final GlobalKey projectsKey;
 
   const LowerContainer({
     Key? key,
     required this.width,
-    required this.intrests,
-    required this.intrestsKey,
+    required this.interests,
+    required this.interestsKey,
     required this.projectsKey,
   }) : super(key: key);
 
@@ -217,7 +217,6 @@ class LowerContainer extends StatelessWidget {
                     ),
                     Center(
                       child: Container(
-                        key: intrestsKey,
                         color: CustomColors.brightBackground,
                         child: Padding(
                           padding: const EdgeInsets.only(top: 20),
@@ -226,7 +225,7 @@ class LowerContainer extends StatelessWidget {
                               Center(
                                 child: Container(
                                   alignment: Alignment.center,
-                                  child: Text('Intrests',
+                                  child: Text('Interests',
                                       style: GoogleFonts.getFont('Delius',
                                           color: CustomColors.primary,
                                           fontSize: 19)),
@@ -235,6 +234,7 @@ class LowerContainer extends StatelessWidget {
                               SizedBox(height: width * 0.03),
                               // 820
                               Center(
+                                key: interestsKey,
                                 child: LayoutBuilder(
                                     builder: (context, constraints) {
                                   if (constraints.maxWidth >= Breakpoints.lg) {
@@ -247,10 +247,10 @@ class LowerContainer extends StatelessWidget {
                                         itemBuilder:
                                             (BuildContext context, int index) =>
                                                 Intrest(
-                                          intrest: intrests[index]['intrest'],
-                                          color: intrests[index]['color'],
-                                          textColor: intrests[index]['textColor'],
-                                          key: index == 4 ? intrestsKey : null,
+                                          intrest: interests[index]['interest'],
+                                          color: interests[index]['color'],
+                                          textColor: interests[index]['textColor'],
+
                                         ),
                                         staggeredTileBuilder: (int index) =>
                                             const StaggeredTile.fit(
@@ -274,12 +274,10 @@ class LowerContainer extends StatelessWidget {
                                             itemBuilder: (BuildContext context,
                                                     int index) =>
                                                 Intrest(
-                                              intrest: intrests[index]['intrest'],
-                                              color: intrests[index]['color'],
-                                              textColor: intrests[index]
+                                              intrest: interests[index]['interest'],
+                                              color: interests[index]['color'],
+                                              textColor: interests[index]
                                                   ['textColor'],
-                                              key:
-                                                  index == 4 ? intrestsKey : null,
                                             ),
                                             staggeredTileBuilder: (int index) =>
                                                 const StaggeredTile.fit(
@@ -304,12 +302,10 @@ class LowerContainer extends StatelessWidget {
                                             itemBuilder: (BuildContext context,
                                                     int index) =>
                                                 Intrest(
-                                              intrest: intrests[index]['intrest'],
-                                              color: intrests[index]['color'],
-                                              textColor: intrests[index]
+                                              intrest: interests[index]['interest'],
+                                              color: interests[index]['color'],
+                                              textColor: interests[index]
                                                   ['textColor'],
-                                              key:
-                                                  index == 5 ? intrestsKey : null,
                                             ),
                                             staggeredTileBuilder: (int index) =>
                                                 const StaggeredTile.fit(

@@ -17,8 +17,8 @@ class Portfolio extends StatefulWidget {
 }
 
 class _PortfolioState extends State<Portfolio> {
-  late final List<Map> intrests;
-  late final GlobalKey intrestsKey;
+  late final List<Map> interests;
+  late final GlobalKey interestsKey;
   late final GlobalKey skillskey;
   late final GlobalKey projectkey;
   late final ScrollController scrollController;
@@ -26,35 +26,35 @@ class _PortfolioState extends State<Portfolio> {
 
   @override
   void initState() {
-    intrestsKey = GlobalKey();
+    interestsKey = GlobalKey();
     skillskey = GlobalKey();
     projectkey = GlobalKey();
     scrollController = ScrollController();
     showFloatingButton = false.obs;
 
-    intrests = [
+    interests = [
       {
-        'intrest': 'Coding',
+        'interest': 'Coding',
         'color': CustomColors.darkBackground,
         'textColor': CustomColors.primary,
       },
       {
-        'intrest': 'Photography',
+        'interest': 'Photography',
         'color': CustomColors.darkBackground,
         'textColor': CustomColors.primary,
       },
       {
-        'intrest': 'Writing',
+        'interest': 'Writing',
         'color': CustomColors.darkBackground,
         'textColor': CustomColors.primary,
       },
       {
-        'intrest': 'Travelling',
+        'interest': 'Travelling',
         'color': CustomColors.darkBackground,
         'textColor': CustomColors.primary,
       },
       {
-        'intrest': 'Reading',
+        'interest': 'Reading',
         'color': CustomColors.darkBackground,
         'textColor': CustomColors.primary,
       }
@@ -108,7 +108,7 @@ class _PortfolioState extends State<Portfolio> {
                   NavBar(
                     width: width,
                     scrollController: scrollController,
-                    intrestsKey: intrestsKey,
+                    intrestsKey: interestsKey,
                     skillsKey: skillskey,
                     projectskey: projectkey,
                   ),
@@ -117,7 +117,7 @@ class _PortfolioState extends State<Portfolio> {
                   ),
                   UpperContainer(
                     width: width,
-                    intrestsKey: intrestsKey,
+                    intrestsKey: interestsKey,
                     scrollController: scrollController,
                   ),
                   const SizedBox(
@@ -131,8 +131,8 @@ class _PortfolioState extends State<Portfolio> {
                   ),
                   LowerContainer(
                     width: width,
-                    intrests: intrests,
-                    intrestsKey: intrestsKey,
+                    interests: interests,
+                    interestsKey: interestsKey,
                     projectsKey: projectkey
                   ),
                   const SizedBox(

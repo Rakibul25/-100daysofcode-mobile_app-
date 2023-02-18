@@ -46,14 +46,18 @@ class Skills extends StatelessWidget {
                                   //language
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text("Language",
-                                                style: GoogleFonts.getFont('Delius',
+                                                style: GoogleFonts.getFont(
+                                                    'Delius',
                                                     color: CustomColors.gray,
                                                     fontSize: 22)),
                                             const SizedBox(
@@ -64,18 +68,27 @@ class Skills extends StatelessWidget {
                                                 Column(
                                                   children: const [
                                                     SkillCard(
-                                                        percentage: 0.7, label: "Dart"),
+                                                        percentage: 0.7,
+                                                        label: "Dart"),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
                                                     SkillCard(
-                                                        percentage: 0.7, label: "Java"),
+                                                        percentage: 0.7,
+                                                        label: "Java"),
+                                                    SizedBox(
+                                                      height: 20,
+                                                    ),
+                                                    SkillCard(
+                                                        percentage: 0.7,
+                                                        label: "C"),
                                                   ],
                                                 ),
                                                 Column(
                                                   children: const [
                                                     SkillCard(
-                                                        percentage: 0.7, label: "C"),
+                                                        percentage: 0.6,
+                                                        label: "SQL"),
                                                     SizedBox(
                                                       height: 20,
                                                     ),
@@ -96,7 +109,11 @@ class Skills extends StatelessWidget {
                               SizedBox(
                                 width: size.width * .05,
                               ),
-                              Image.asset(ImageAssetConstants.coding,height: 200,width: 200,),
+                              Image.asset(
+                                ImageAssetConstants.coding,
+                                height: 200,
+                                width: 200,
+                              ),
                               SizedBox(
                                 width: size.width * .05,
                               ),
@@ -106,28 +123,38 @@ class Skills extends StatelessWidget {
                                   children: [
                                     Text("FrameWorks, Tools & Technology",
                                         style: GoogleFonts.getFont('Delius',
-                                            color: CustomColors.gray, fontSize: 22)),
+                                            color: CustomColors.gray,
+                                            fontSize: 22)),
                                     const SizedBox(
                                       height: 8,
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: const [
                                             SkillCardLinear(
-                                                percentage: 0.75, label: "Flutter"),
+                                                percentage: 0.75,
+                                                label: "Flutter"),
                                             SkillCardLinear(
-                                                percentage: 0.7, label: "Firebase"),
+                                                percentage: 0.7,
+                                                label: "Firebase"),
                                             SkillCardLinear(
-                                                percentage: 0.85, label: "Git/Github"),
+                                                percentage: 0.85,
+                                                label: "Git/Github"),
                                             SkillCardLinear(
-                                                percentage: 0.70, label: "Sqlite"),
+                                                percentage: 0.70,
+                                                label: "Sqlite"),
                                             SkillCardLinear(
-                                                percentage: 0.55, label: "Jira"),
+                                                percentage: 0.55,
+                                                label: "Jira"),
                                             SkillCardLinear(
                                                 percentage: 0.60,
                                                 label: "Problem Solving"),
@@ -168,7 +195,11 @@ class Skills extends StatelessWidget {
                           const SizedBox(
                             width: 10,
                           ),
-                          Image.asset(ImageAssetConstants.coding,height: 200,width: 200,),
+                          Image.asset(
+                            ImageAssetConstants.coding,
+                            height: 200,
+                            width: 200,
+                          ),
                           const SizedBox(
                             width: 10,
                           ),
@@ -202,6 +233,14 @@ class Skills extends StatelessWidget {
                                         height: 20,
                                       ),
                                       SkillCard(percentage: 0.7, label: "Java"),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  Column(
+                                    children: const [
+                                      SkillCard(percentage: 0.6, label: "SQL"),
                                     ],
                                   ),
                                 ],
@@ -253,7 +292,11 @@ class Skills extends StatelessWidget {
                               color: CustomColors.primary, fontSize: 20)),
                       const SizedBox(height: 20),
                       const Divider(),
-                      Image.asset(ImageAssetConstants.coding,height: 200,width: 200,),
+                      Image.asset(
+                        ImageAssetConstants.coding,
+                        height: 200,
+                        width: 200,
+                      ),
                       const SizedBox(height: 20),
                       Text("Language",
                           style: GoogleFonts.getFont('Delius',
@@ -276,7 +319,9 @@ class Skills extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 15,),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -292,6 +337,19 @@ class Skills extends StatelessWidget {
                             height: 20,
                           ),
                           SkillCard(percentage: 0.7, label: "Java"),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SkillCard(percentage: 0.6, label: "SQL"),
                         ],
                       ),
                       const SizedBox(
