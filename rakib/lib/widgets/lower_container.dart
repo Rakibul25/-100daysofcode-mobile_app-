@@ -100,6 +100,16 @@ class LowerContainer extends StatelessWidget {
                                   children: [
                                     const SizedBox(height: 10),
                                     ProjectCard(
+                                        title: 'Ecommerce',
+                                        imagesource: 'assets/appss/ecommerce.png',
+                                        link:
+                                        'https://github.com/Rakibul25/Ecommerce_flutter_bloc',
+                                        width: width,
+                                        ratio: 0.40,
+                                        fontsize: 16
+                                    ),
+                                    const SizedBox(height: 10),
+                                    ProjectCard(
                                       title: 'Classroom',
                                       imagesource: 'assets/appss/class.png',
                                       link:
@@ -148,6 +158,16 @@ class LowerContainer extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
+                                ProjectCard(
+                                    title: 'Ecommerce',
+                                    imagesource: 'assets/appss/ecommerce.png',
+                                    link:
+                                    'https://github.com/Rakibul25/Ecommerce_flutter_bloc',
+                                    width: 2 * width,
+                                    ratio: 0.35,
+                                    fontsize: 12
+                                ),
+                                const SizedBox(height: 10),
                                 ProjectCard(
                                     title: 'HomeRent-(Flutter Project)',
                                     imagesource: 'assets/appss/homerent.png',

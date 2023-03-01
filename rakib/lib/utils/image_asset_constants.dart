@@ -10,5 +10,6 @@ class ImageAssetConstants{
   static const String rakib_black='assets/images/blacksuit.jpeg';
   static const String upperback='assets/images/upperback.jpg';
   static const String homess='assets/appss/homerent.png';
+  static const String ecommerce='assets/appss/ecommerce.png';
   static const String under_construction='assets/images/under_construction.png';
 }
