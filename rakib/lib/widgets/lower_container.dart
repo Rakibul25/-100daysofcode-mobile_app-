@@ -72,10 +72,10 @@ class LowerContainer extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 10),
                                     ProjectCard(
-                                      title: 'BankApp-(Flutter Project)',
-                                      imagesource: 'assets/appss/bank.png',
+                                      title: 'Login-Signup Solution',
+                                      imagesource: 'assets/appss/auth.png',
                                       link:
-                                          'https://github.com/Rakibul25/Bank_UI-flutter-100days',
+                                          'https://github.com/Rakibul25/firebase_auth_test',
                                       width: width,
                                       ratio: 0.40,
                                         fontsize: 16
@@ -178,10 +178,10 @@ class LowerContainer extends StatelessWidget {
                                     fontsize: 12),
                                 const SizedBox(height: 10),
                                 ProjectCard(
-                                    title: 'BankApp-(Flutter Project)',
-                                    imagesource: 'assets/appss/bank.png',
+                                    title: 'Login-Signup Solution',
+                                    imagesource: 'assets/appss/auth.png',
                                     link:
-                                        'https://github.com/Rakibul25/Bank_UI-flutter-100days',
+                                    'https://github.com/Rakibul25/firebase_auth_test',
                                     width: 2 * width,
                                     ratio: 0.35,
                                     fontsize: 12),
