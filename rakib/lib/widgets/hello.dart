@@ -23,22 +23,21 @@ class HelloWithBio extends StatelessWidget {
                   color: Colors.white, fontSize: 26)),
           const SizedBox(height: 5),
           Text(
-              "Completed my graduation in computer science & engineering from United International University."
-              " Strongly passionate about software engineering."
-              "If you want to know more about my qualifications and other information, Please",
+              "A software developer at Codeware Ltd.\nI love working on challenging projects that push the boundaries of what's possible, "
+              "and I'm always striving to learn and grow as a developer.",
               style: GoogleFonts.getFont('Delius',
                   color: CustomColors.gray, fontSize: 16),
             textAlign: TextAlign.left,
           ),
-          InkWell(
-            onTap: () async => !await launch(
-                'https://drive.google.com/drive/folders/11CBADlaI-XRwVrPcwRNIt_NYBxaxIRjN?usp=sharing'),
-            child: Text("download my resume!",
-                style: GoogleFonts.getFont('Delius',
-                    decoration: TextDecoration.underline,
-                    color: CustomColors.primary,
-                    fontSize: 16)),
-          )
+          // InkWell(
+          //   onTap: () async => !await launch(
+          //       'https://drive.google.com/drive/folders/11CBADlaI-XRwVrPcwRNIt_NYBxaxIRjN?usp=sharing'),
+          //   child: Text("download my resume!",
+          //       style: GoogleFonts.getFont('Delius',
+          //           decoration: TextDecoration.underline,
+          //           color: CustomColors.primary,
+          //           fontSize: 16)),
+          // )
         ],
       ),
     );
